@@ -1,0 +1,42 @@
+\name{cov.mnp}
+
+\alias{cov.mnp}
+
+\title{Extract Multinomial Probit Model Covariance Matrix}
+
+\description{
+  \code{cov.mnp} is a function which extracts the posterior draws of
+  covariance matrix from objects returned by \code{mnp}.
+}
+
+\usage{
+  cov.mnp(object, subset = NULL, ...)
+}
+
+\arguments{
+  \item{object}{An output object from \code{mnp}.}
+  \item{subset}{A scalar or a numerical vector specifying the row
+    number(s) of \code{param} in the output object from \code{mnp}. If
+    specified, the posterior draws of covariance matrix for those rows are
+    extracted. The default is \code{NULL} where all the posterior draws
+    are extracted. 
+  }
+  \item{...}{further arguments passed to or from other methods.}
+}
+
+\value{
+  When a numerical vector or \code{NULL} is specified for \code{subset}
+  argument, \code{cov.mnp} returns a three dimensional array where the
+  third dimension indexes posterior draws. When a scalar is
+  specified for \code{subset} arugment, \code{cov.mnp} returns a matrix.
+}
+
+\seealso{\code{mnp}, \code{coef.mnp}; MNP home page at
+  \url{http://imai.princeton.edu/research/MNP.html}}
+
+\author{
+  Kosuke Imai, Department of Politics, Princeton University
+  \email{kimai@Princeton.Edu}
+}
+
+\keyword{methods}

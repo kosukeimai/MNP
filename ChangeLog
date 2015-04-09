@@ -1,0 +1,51 @@
+Version Date        Description
+2.6-4    06.09.13  a label error for latent variables (thanks to Sky Xue)
+2.6-3    12.06.11  a minor change to eliminate warnings for R2.14-0
+2.6-2    10.27.10  a bug fixed in predict() (thanks to Lane Burgette)
+2.6-1    09.23.09  trace restriction used as the default (thanks to Lane Burgette)
+2.5-6    03.24.08  an important bug fix for the treatment of base categories (thanks to Ryan Black and Taeyoung Park)
+2.5-5    08.01.07  returning X matrix from predict()
+2.5-4    05.24.07  another bug fix in predict() (thanks to Andrew Owen)
+2.5-3    12.04.06  a minor change
+2.5-2    11.30.06  a bug fix in predict()
+2.5-1    11.21.06  rewrite predict() in C for speedup. Changed moredraw to n.draws
+2.4-2    10.17.06  bug fix in {\tt moredraw} option (thanks to Ken Benoit)
+2.4-1    10.05.06  added an option, moredraw, to predict.mnp() (thanks to Ken Benoit)
+2.3-9    09.21.06  minor changes to be consistent with R version 2.4-0
+2.3-8    04.26.06  removing C warnings for Windows platform
+2.3-7    04.24.06  some very minor fixes to the C code
+2.3-6    01.11.06  print the number of estimated parameters in summary() (thanks to S.C. Wang)
+2.3-5    12.27.05  -1 is allowed in formula (thanks to Daeyoung Koh)
+2.3-4    09.06.05  added inverse CDF method option for truncated normal sampling
+2.3-3    06.23.05  made Gibbs sampler slightly more efficient
+2.3-2    06.02.05  minor changes to NAMESPACE and DESCRIPTOIN files
+2.3-1    05.27.05  added coef.mnp() and cov.mnp() (thanks to Natasha Zharinova)
+2.2-3    05.12.05  minor changes to the documentation; version published in Journal of Statistical Software
+2.2-2    05.09.05  minor changes to the documentation
+2.2-1    05.01.05  stable release for R 2.1.0; The observations with missing values in X will be deleted in mnp() and predict() (thanks to Natasha Zharinova)
+2.1-2    03.22.05  added an option, newdraw, for predict() method
+2.1-1    02.25.05  improved predict() method; documentation enhanced and edited
+2.0-1    02.12.05  added predict() method (thanks to Xavier Gerard and Saleem Shaik)
+1.4-1    12.16.04  improved error handling (thanks to Kjetil Halvorsen)
+1.3-2    11.17.04  stable release for R 2.0.1; minor updates of the documentation
+1.3-1    10.09.04  stable release for R 2.0.0; updating vector.c
+1.2-1    09.26.04  optionally stores the latent variable (thanks to Colin McCulloch)
+1.1-2    09.14.04  minor fix in mnp() (thanks to Ken Shultz)
+1.1-1    08.28.04  major and minor changes: namespace implemented
+1.0-4    07.14.04  users can interrupt the C process within R (thanks to Kevin Quinn)
+1.0-3    06.30.04  bug fix in xmatrix.mnp() (thanks to Andrew Martin)
+1.0-2    06.29.04  removed p.alpha0 parameter
+1.0-1    06.23.04  official release
+0.9-13  05.28.04  bug fix in ymatrix.mnp()
+0.9-12  05.23.04  updating the documentation and help files
+0.9-11  05.08.04  bug fix in cXnames() (thanks to Liming Wang)
+0.9-10  05.03.04  first stable version; bug fix in labeling
+0.9-9    05.02.04  bug fix in sampling of W;   added summary.mnp() and print.summary.mnp()
+0.9-8    04.29.04  improving sampling of W, replace printf() with Rprintf()
+0.9-7    04.27.04  missing data allowed for all models, varying choice sets allowed.
+0.9-6    04.26.04  missing data allowed in the response variable for standard MNP; a major bug fixed for MoP (thanks to Shigeo Hirano)
+0.9-5    04.25.04  improper prior handled by algorithm 1
+0.9-4    04.21.04  bug fix in MoP, R 1.9.0 compatible, changes in mprobit.R
+0.9-3    04.10.04  rWish() modified with an improved algorithm
+0.9-2    03.22.04  first public beta version
+0.9-1    03.20.04  first beta version

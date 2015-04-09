@@ -1,0 +1,70 @@
+\begin{thebibliography}{}
+
+\bibitem[Burgette and Nordheim(2009)]{burg:nord:09}
+Burgette, L. and Nordheim, E. (2009).
+\newblock An alternate identifying restriction for the bayesian multinomial
+  probit model.
+\newblock Tech. rep., Department of Statistics, University of Wisconsin,
+  Madison.
+
+\bibitem[Chintagunta and Prasad(1998)]{chin:pras:98}
+Chintagunta, P.~K. and Prasad, A.~R. (1998).
+\newblock An empirical investigation of the ``{D}ynamic {M}c{F}adden'' model of
+  purchase timing and brand choice: Implications for market structure.
+\newblock \emph{Journal of Business \& Economic Statistics} \textbf{16}, 1,
+  2--12.
+
+\bibitem[Gelman \emph{et~al.}(2004)Gelman, Carlin, Stern, and
+  Rubin]{gelm:carl:ster:rubi:04}
+Gelman, A., Carlin, J.~B., Stern, H.~S., and Rubin, D.~B. (2004).
+\newblock \emph{Bayesian Data Analysis}.
+\newblock Chapman \& Hall, London, 2nd edn.
+
+\bibitem[Gelman and Rubin(1992)]{gelm:rubi:92}
+Gelman, A. and Rubin, D.~B. (1992).
+\newblock Inference from iterative simulations using multiple sequences (with
+  discussion).
+\newblock \emph{Statistical Science} \textbf{7}, 4, 457--472.
+
+\bibitem[Imai and van Dyk(2005)]{imai:vand:05}
+Imai, K. and van Dyk, D.~A. (2005).
+\newblock A {B}ayesian analysis of the multinomial probit model using marginal
+  data augmentation.
+\newblock \emph{Journal of Econometrics} \textbf{124}, 2, 311--334.
+
+\bibitem[McCulloch \emph{et~al.}(2000)McCulloch, Polson, and
+  Rossi]{mccu:pols:ross:00}
+McCulloch, R., Polson, N.~G., and Rossi, P. (2000).
+\newblock A {B}ayesian analysis of the multinomial probit model with fully
+  identified parameters.
+\newblock \emph{Journal of Econometrics} \textbf{99}, 173--193.
+
+\bibitem[McCulloch and Rossi(1994)]{mccu:ross:94}
+McCulloch, R. and Rossi, P. (1994).
+\newblock An exact likelihood analysis of the multinomial probit model.
+\newblock \emph{Journal of Econometrics} \textbf{64}, 207--240.
+
+\bibitem[Nobile(2000)]{nobi:00}
+Nobile, A. (2000).
+\newblock Comment: {B}ayesian multinomial probit models with normalization
+  constraint.
+\newblock \emph{Journal of Econometrics} \textbf{99}, 335--345.
+
+\bibitem[Plummer \emph{et~al.}(2005)Plummer, Best, Cowles, and
+  Vines]{plum:best:cowl:vine:05}
+Plummer, M., Best, N., Cowles, K., and Vines, K. (2005).
+\newblock \emph{coda: Output analysis and diagnostics for MCMC}.
+\newblock R package version 0.9-2.
+
+\bibitem[{R Development Core Team}(2012)]{R:12}
+{R Development Core Team} (2012).
+\newblock \emph{R: A Language and Environment for Statistical Computing}.
+\newblock R Foundation for Statistical Computing, Vienna, Austria.
+\newblock {ISBN} 3-900051-07-0.
+
+\bibitem[Rossi and McCulloch(2005)]{ross:mccu:05}
+Rossi, P. and McCulloch, R. (2005).
+\newblock \emph{bayesm: Bayesian Inference for Marketing/Micro-econometrics}.
+\newblock R package version 0.0-2.
+
+\end{thebibliography}

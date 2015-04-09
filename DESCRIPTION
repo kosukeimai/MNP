@@ -29,7 +29,4 @@ LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)
 URL: http://imai.princeton.edu/software/MNP.html
-Packaged: 2013-06-09 17:45:34 UTC; kimai
 NeedsCompilation: yes
-Repository: CRAN
-Date/Publication: 2013-06-09 20:16:42

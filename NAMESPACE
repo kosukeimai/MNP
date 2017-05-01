@@ -1,5 +1,7 @@
-useDynLib(MNP)
+useDynLib(MNP, .registration = TRUE)
 
+importFrom("utils", "packageDescription")
+importFrom("stats", "as.formula", "model.matrix.default", "model.response", "printCoefmat", "quantile", "relevel", "sd")
 importFrom(MASS, mvrnorm)
 export(mnp, coef.mnp, cov.mnp, predict.mnp, summary.mnp, print.summary.mnp)
 

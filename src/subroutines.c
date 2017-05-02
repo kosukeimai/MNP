@@ -5,6 +5,7 @@
 #include <math.h>
 #include <Rmath.h>
 #include <R.h> 
+#include <Rinternals.h>
 #include <R_ext/Lapack.h>
 #include "vector.h"
 #include "rand.h"

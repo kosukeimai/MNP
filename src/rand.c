@@ -17,7 +17,7 @@ double sTruncNorm(
 		  int lower     /* 1 = x > bd, 0 = x < bd */
 		  ) {
 
-  double z, logb, lambda, u;
+  double z, logb, lambda;
   double sigma = sqrt(var);
   double stbd = (bd - mu)/sigma;
 

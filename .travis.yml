@@ -6,6 +6,10 @@ r:
 cache: packages
 sudo: required
 
+script:
+    - Rscript -e 'library(MNP); data(detergent)'
+    - Rscript test.R
+
 notifications:
   email:
     on_success: change

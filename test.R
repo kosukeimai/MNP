@@ -1,6 +1,9 @@
 ## load the package
 library(MNP)
 
+## Set random seed
+set.seed(12345)
+
 ## load the detergent data
 data(detergent)
 ## run the standard multinomial probit model with intercepts and the price

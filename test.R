@@ -25,5 +25,4 @@ summary(res2)
 ## averaging over 100 additional Monte Carlo draws given each of MCMC draw.
 pre2 <- predict(res2, newdata = japan[10,], type = "prob", n.draws = 100,
                 verbose = TRUE)
-}
 

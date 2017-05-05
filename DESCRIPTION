@@ -1,15 +1,17 @@
 Package: MNP
-Version: 2.6-4
-Date: 2013-06-09
-Title: R Package for Fitting the Multinomial Probit Model
-Author: Kosuke Imai <kimai@princeton.edu>, David A. van Dyk
-        <dvd@uci.edu>.
+Version: 3.0-1
+Date: 2017-05-05
+Title: R Package for Fitting the Multinomial Probit Model 
+Authors@R: c(
+  person("Kosuke", "Imai", , "kimai@Princeton.Edu", c("aut", "cre")),
+  person("David", "van Dyk", , "dvandyk@imperial.ac.uk", c("aut")),
+  person("Jin", "Hubert", , "hubertj@princeton.edu", c("ctb"))
+  )
 Maintainer: Kosuke Imai <kimai@princeton.edu>
 Depends: R (>= 2.1), MASS, utils
-Description: MNP is a publicly available R package that fits the
-        Bayesian multinomial probit model via Markov chain Monte Carlo.
-        The multinomial probit model is often used to analyze the
-        discrete choices made by individuals recorded in survey data.
+Description: Fits the Bayesian multinomial probit model via Markov chain 
+        Monte Carlo.  The multinomial probit model is often used to analyze 
+        the discrete choices made by individuals recorded in survey data.
         Examples where the multinomial probit model may be useful
         include the analysis of product choice by consumers in market
         research and the analysis of candidate or party choice by
@@ -21,13 +23,15 @@ Description: MNP is a publicly available R package that fits the
         that is developed by Imai and van Dyk (2005). ``A Bayesian
         Analysis of the Multinomial Probit Model Using the Data
         Augmentation,'' Journal of Econometrics, Vol. 124, No. 2
-        (February), pp. 311-334. Detailed examples are given in Imai
-        and van Dyk (2005). ``MNP: R Package for Fitting the
-        Multinomial Probit Model.'' Journal of Statistical Software,
-        Vol. 14, No. 3 (May), pp. 1-32.
+        (February), pp. 311-334. <DOI:10.1016/j.jeconom.2004.02.002>
+        Detailed examples are given in Imai and van Dyk (2005). 
+        ``MNP: R Package for Fitting the Multinomial Probit Model.'' 
+        Journal of Statistical Software, Vol. 14, No. 3 (May), pp. 1-32. 
+        <DOI:10.18637/jss.v014.i03>
 LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)
-URL: http://imai.princeton.edu/software/MNP.html
+URL: http://imai.princeton.edu/research/MNP.html
+BugReports: https://github.com/kosukeimai/MNP/issues
 NeedsCompilation: yes
 RoxygenNote: 6.0.1

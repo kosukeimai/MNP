@@ -3,13 +3,11 @@
 #' \code{summary} method for class \code{mnp}.
 #' 
 #' 
-#' @aliases summary.mnp print.summary.mnp
+#' @aliases summary.mnp
 #' @param object An output object from \code{mnp}.
 #' @param CI A 2 dimensional vector of lower and upper bounds for the credible
 #' intervals used to summarize the results. The default is the equal tail 95
 #' percent credible interval.
-#' @param x An object of class \code{summary.mnp}.
-#' @param digits the number of significant digits to use when printing.
 #' @param ... further arguments passed to or from other methods.
 #' @return \code{summary.mnp} yields an object of class \code{summary.mnp}
 #' containing the following elements: \item{call}{The call from \code{mnp}.}

@@ -1,3 +1,6 @@
+## List the R version
+R.Version()
+
 ## load the package
 library(MNP)
 

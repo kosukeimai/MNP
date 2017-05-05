@@ -30,3 +30,4 @@ LazyData: yes
 License: GPL (>= 2)
 URL: http://imai.princeton.edu/software/MNP.html
 NeedsCompilation: yes
+RoxygenNote: 6.0.1

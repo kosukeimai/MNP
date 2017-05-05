@@ -1,3 +1,29 @@
+#' Summarizing the results for the Multinomial Probit Models
+#' 
+#' \code{summary} method for class \code{mnp}.
+#' 
+#' 
+#' @aliases summary.mnp
+#' @param object An output object from \code{mnp}.
+#' @param CI A 2 dimensional vector of lower and upper bounds for the credible
+#' intervals used to summarize the results. The default is the equal tail 95
+#' percent credible interval.
+#' @param ... further arguments passed to or from other methods.
+#' @return \code{summary.mnp} yields an object of class \code{summary.mnp}
+#' containing the following elements: \item{call}{The call from \code{mnp}.}
+#' \item{n.alt}{The total number of alternatives.} \item{base}{The base
+#' category used for fitting.} \item{n.obs}{The number of observations.}
+#' \item{n.param}{The number of estimated parameters.} \item{n.draws}{The
+#' number of Gibbs draws used for the summary.} \item{coef.table}{The summary
+#' of the posterior distribution of the coefficients. } \item{cov.table}{The
+#' summary of the posterior distribution of the covariance matrix.} This object
+#' can be printed by \code{print.summary.mnp}
+#' @author Kosuke Imai, Department of Politics, Princeton University
+#' \email{kimai@@Princeton.Edu}
+#' @seealso \code{mnp}; MNP home page at
+#' \url{http://imai.princeton.edu/research/MNP.html}
+#' @keywords methods
+#' @export summary.mnp
 summary.mnp <- function(object, CI=c(2.5, 97.5),...){
 
   p <- object$n.alt

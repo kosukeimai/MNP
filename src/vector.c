@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <R_ext/Utils.h>
 #include <R.h>
+#include <Rinternals.h>
 
 int* intArray(int num) {
   int *iArray = (int *)malloc(num * sizeof(int));

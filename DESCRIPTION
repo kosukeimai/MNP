@@ -7,7 +7,7 @@ Authors@R: c(
   person("David", "van Dyk", , "dvandyk@imperial.ac.uk", c("aut")),
   person("Jin", "Hubert", , "hubertj@princeton.edu", c("ctb"))
   )
-Maintainer: Kosuke Imai <kimai@princeton.edu>
+Maintainer: Kosuke Imai <kimai@Princeton.Edu>
 Depends: R (>= 2.1), MASS, utils
 Description: Fits the Bayesian multinomial probit model via Markov chain 
         Monte Carlo.  The multinomial probit model is often used to analyze 

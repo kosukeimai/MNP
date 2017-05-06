@@ -216,7 +216,6 @@ report}, Department of Statistics, University of Wisconsin, Madison.
 \author{
 Kosuke Imai, Department of Politics, Princeton University
 \email{kimai@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
-Dyk, Department of Statistics, University of California, Irvine
-\email{dvd@uci.edu}, \url{http://www.ics.uci.edu/~dvd}.
+Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 }
 \keyword{models}

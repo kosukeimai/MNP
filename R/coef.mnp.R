@@ -17,9 +17,8 @@
 #' scalar is specified for \code{subset} arugment) of multinomila probit model
 #' coefficients.
 #' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}
-#' @seealso \code{mnp}, \code{cov.mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \email{kimai@Princeton.Edu}
+#' @seealso \code{mnp}, \code{cov.mnp}; 
 #' @keywords methods
 #' @export coef.mnp
 coef.mnp <- function(object, subset = NULL, ...) {

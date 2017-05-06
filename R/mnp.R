@@ -132,8 +132,7 @@
 #' \email{kimai@@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
 #' Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 #' @seealso \code{coef.mnp}, \code{cov.mnp}, \code{predict.mnp},
-#' \code{summary.mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \code{summary.mnp}; 
 #' @references Imai, Kosuke and David A. van Dyk. (2005a) \dQuote{A Bayesian
 #' Analysis of the Multinomial Probit Model Using the Marginal Data
 #' Augmentation,} \emph{Journal of Econometrics}, Vol. 124, No. 2 (February),

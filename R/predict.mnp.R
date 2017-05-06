@@ -67,9 +67,8 @@
 #' \item{x}{A matrix of covariates
 #' used for prediction }
 #' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}
-#' @seealso \code{mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \email{kimai@Princeton.Edu}
+#' @seealso \code{mnp}
 #' @keywords methods
 #' @export predict.mnp
 predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,

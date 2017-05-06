@@ -19,9 +19,8 @@
 #' summary of the posterior distribution of the covariance matrix.} This object
 #' can be printed by \code{print.summary.mnp}
 #' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}
-#' @seealso \code{mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \email{kimai@Princeton.Edu}
+#' @seealso \code{mnp}
 #' @keywords methods
 #' @export summary.mnp
 summary.mnp <- function(object, CI=c(2.5, 97.5),...){

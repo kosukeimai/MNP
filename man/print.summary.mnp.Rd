@@ -17,8 +17,7 @@
 \code{summary} print method for class \code{mnp}.
 }
 \seealso{
-\code{mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{mnp}
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University

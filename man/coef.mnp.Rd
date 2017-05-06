@@ -29,8 +29,7 @@ coefficients from ojbects returned by \code{mnp}. \code{coefficients.mnp} is
 an alias for it. \code{coef} method for class \code{mnp}.
 }
 \seealso{
-\code{mnp}, \code{cov.mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{mnp}, \code{cov.mnp};
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University

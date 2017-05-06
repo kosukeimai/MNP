@@ -210,8 +210,7 @@ report}, Department of Statistics, University of Wisconsin, Madison.
 }
 \seealso{
 \code{coef.mnp}, \code{cov.mnp}, \code{predict.mnp},
-\code{summary.mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{summary.mnp};
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University

@@ -86,8 +86,7 @@ used. In either case, setting \code{verbose = TRUE} may be helpful in
 monitoring the progress of the code.
 }
 \seealso{
-\code{mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{mnp}
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University

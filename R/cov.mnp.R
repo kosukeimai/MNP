@@ -15,9 +15,8 @@
 #' where the third dimension indexes posterior draws. When a scalar is
 #' specified for \code{subset} arugment, \code{cov.mnp} returns a matrix.
 #' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}
-#' @seealso \code{mnp}, \code{coef.mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \email{kimai@Princeton.Edu}
+#' @seealso \code{mnp}, \code{coef.mnp}; 
 #' @keywords methods
 #' @export cov.mnp
 cov.mnp <- function(object, subset = NULL, ...) {

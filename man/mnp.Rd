@@ -174,7 +174,7 @@ data(detergent)
 res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
                                        Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                        Solo=SoloPrice, All=AllPrice),
-            cXnames = "price", data = detergent, n.draws = 500, burnin = 100,
+            cXnames = "price", data = detergent, n.draws = 100, burnin = 10,
             thin = 3, verbose = TRUE)
 ## summarize the results
 summary(res1)
@@ -210,13 +210,11 @@ report}, Department of Statistics, University of Wisconsin, Madison.
 }
 \seealso{
 \code{coef.mnp}, \code{cov.mnp}, \code{predict.mnp},
-\code{summary.mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{summary.mnp};
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University
 \email{kimai@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
-Dyk, Department of Statistics, University of California, Irvine
-\email{dvd@uci.edu}, \url{http://www.ics.uci.edu/~dvd}.
+Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 }
 \keyword{models}

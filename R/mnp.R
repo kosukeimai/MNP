@@ -130,11 +130,9 @@
 #' \item{thin}{The thinning interval.}
 #' @author Kosuke Imai, Department of Politics, Princeton University
 #' \email{kimai@@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
-#' Dyk, Department of Statistics, University of California, Irvine
-#' \email{dvd@@uci.edu}, \url{http://www.ics.uci.edu/~dvd}.
+#' Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 #' @seealso \code{coef.mnp}, \code{cov.mnp}, \code{predict.mnp},
-#' \code{summary.mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \code{summary.mnp}; 
 #' @references Imai, Kosuke and David A. van Dyk. (2005a) \dQuote{A Bayesian
 #' Analysis of the Multinomial Probit Model Using the Marginal Data
 #' Augmentation,} \emph{Journal of Econometrics}, Vol. 124, No. 2 (February),
@@ -162,7 +160,7 @@
 #' res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
 #'                                        Wisk=WiskPrice, EraPlus=EraPlusPrice,
 #'                                        Solo=SoloPrice, All=AllPrice),
-#'             cXnames = "price", data = detergent, n.draws = 500, burnin = 100,
+#'             cXnames = "price", data = detergent, n.draws = 100, burnin = 10,
 #'             thin = 3, verbose = TRUE)
 #' ## summarize the results
 #' summary(res1)

@@ -7,9 +7,8 @@
 #' @param digits the number of significant digits to use when printing.
 #' @param ... further arguments passed to or from other methods.
 #' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}
-#' @seealso \code{mnp}; MNP home page at
-#' \url{http://imai.princeton.edu/research/MNP.html}
+#' \email{kimai@Princeton.Edu}
+#' @seealso \code{mnp}
 #' @keywords methods
 #' @export print.summary.mnp
 print.summary.mnp <- function(x, digits = max(3, getOption("digits") - 3), ...) {

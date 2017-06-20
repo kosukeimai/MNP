@@ -27,8 +27,7 @@ specified for \code{subset} arugment, \code{cov.mnp} returns a matrix.
 covariance matrix from objects returned by \code{mnp}.
 }
 \seealso{
-\code{mnp}, \code{coef.mnp}; MNP home page at
-\url{http://imai.princeton.edu/research/MNP.html}
+\code{mnp}, \code{coef.mnp};
 }
 \author{
 Kosuke Imai, Department of Politics, Princeton University

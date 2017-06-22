@@ -4,7 +4,7 @@
 \alias{predict.mnp}
 \title{Posterior Prediction under the Bayesian Multinomial Probit Models}
 \usage{
-predict.mnp(object, newdata = NULL, newdraw = NULL, n.draws = 1,
+\method{predict}{mnp}(object, newdata = NULL, newdraw = NULL, n.draws = 1,
   type = c("prob", "choice", "order"), verbose = FALSE, ...)
 }
 \arguments{

@@ -70,7 +70,8 @@
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
-#' @export predict.mnp
+#' @export 
+#' @method predict mnp
 predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
                         type = c("prob", "choice", "order"),
                         verbose = FALSE, ...){

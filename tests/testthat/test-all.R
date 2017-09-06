@@ -9,10 +9,6 @@ set.seed(12345)
 test_that("tests MNP on the detergent data", {
   # load the detergent data
   data(detergent)
-  
-  # set random seed
-  set.seed(12345)
-  
   # run the standard multinomial probit model with intercepts and the price
   res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
               Wisk=WiskPrice, EraPlus=EraPlusPrice, Solo=SoloPrice, All=AllPrice),

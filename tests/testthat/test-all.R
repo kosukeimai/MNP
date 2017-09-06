@@ -6,6 +6,10 @@ context("tests MNP")
 # set random seed
 set.seed(12345)
 
+test_that("tests MNP on the detergent data", {
+  x <- "anything"
+})
+
 if (0) {
 test_that("tests MNP on the detergent data", {
   # load the detergent data

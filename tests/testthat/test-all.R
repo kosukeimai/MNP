@@ -16,7 +16,7 @@ test_that("tests MNP on the detergent data", {
               cXnames = "price", data = detergent, n.draws = 500, burnin = 100, 
               thin = 3, verbose = TRUE)
   # summarize the results
-  # x <- summary(res1)
+  x <- summary(res1)
   # expect_that(length(x), is_equivalent_to(8))
   # expect_true("coef.table" %in% names(x))
   # expect_that(round(x$coef.table[2,2], 3), is_equivalent_to(0.115))

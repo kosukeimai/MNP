@@ -25,6 +25,7 @@ test_that("tests MNP on the detergent data", {
   
   # calculate the quantities of interest for the first 3 observations
   x <- predict(res1, newdata = detergent[1:3,])
+  print(x$o)
   expect_that(length(x), is_equivalent_to(4))
   expect_true("p" %in% names(x))
   expect_that(dim(x$o), is_equivalent_to(c(3, 6, 100)))

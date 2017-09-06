@@ -35,6 +35,7 @@ test_that("tests MNP on the detergent data", {
 # set random seed
 set.seed(12345)
 
+if (0) {
 test_that("tests MNP on the Japanese election census", {
   # load the Japanese election data
   data(japan)
@@ -58,3 +59,4 @@ test_that("tests MNP on the Japanese election census", {
   expect_that(x$p[1,2,3], is_equivalent_to(0.33))
   expect_that(round(x$p[1, "JCP", 5000], 2), is_equivalent_to(0.13))
 })  
+}

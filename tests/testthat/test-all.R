@@ -1,31 +1,11 @@
 rm(list=ls())
-library(testthat)
 library(MNP)
+library(testthat)
 context("tests MNP")
 
 # set random seed
 set.seed(12345)
 
-test_that("tests MNP on the detergent data", {
-  # load the detergent data
-  data(detergent)
-  # run the standard multinomial probit model with intercepts and the price
-  res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
-                                         Wisk=WiskPrice, EraPlus=EraPlusPrice, 
-                                         Solo=SoloPrice, All=AllPrice), 
-              cXnames = "price", data = detergent, n.draws = 500, burnin = 100, 
-              thin = 3, verbose = TRUE)
-  # summarize the results
-  x <- summary(res1)
-  expect_that(length(x), is_equivalent_to(8))
-  # expect_true("coef.table" %in% names(x))
-  # expect_that(round(x$coef.table[2,2], 3), is_equivalent_to(0.115))
-  # expect_that(round(x$coef.table["price", "mean"], 1), is_equivalent_to(-63.4))
-  # expect_that(round(x$cov.table[2,4], 3), is_equivalent_to(0.721))
-  # expect_that(round(x$cov.table["Tide:Tide", "mean"], 3), is_equivalent_to(0.658))
-})
-
-if (0) {
 test_that("tests MNP on the detergent data", {
   # load the detergent data
   data(detergent)
@@ -38,7 +18,7 @@ test_that("tests MNP on the detergent data", {
   x <- summary(res1)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_that(round(x$coef.table[2,2], 3), is_equivalent_to(0.115))
+  expect_that(round(x$coef.table[2,3], 2), is_equivalent_to(0.96))
   expect_that(round(x$coef.table["price", "mean"], 1), is_equivalent_to(-63.4))
   expect_that(round(x$cov.table[2,4], 3), is_equivalent_to(0.721))
   expect_that(round(x$cov.table["Tide:Tide", "mean"], 3), is_equivalent_to(0.658))
@@ -51,7 +31,7 @@ test_that("tests MNP on the detergent data", {
   expect_that(x$o[1,2,3], is_equivalent_to(4))
   expect_that(round(x$p[2, "Tide"], 2), is_equivalent_to(0.33))
 })  
-}
+
 
 # set random seed
 set.seed(12345)

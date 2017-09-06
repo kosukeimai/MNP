@@ -3,6 +3,7 @@ library(MNP)
 library(testthat)
 context("tests MNP")
 
+if (0) {
 # set random seed
 set.seed(12345)
 
@@ -58,3 +59,4 @@ test_that("tests MNP on the Japanese election census", {
   expect_that(x$p[1,2,3], is_equivalent_to(0.33))
   expect_that(round(x$p[1, "JCP", 5000], 2), is_equivalent_to(0.13))
 })  
+}

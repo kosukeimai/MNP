@@ -29,7 +29,7 @@ test_that("tests MNP on the detergent data", {
   expect_true("p" %in% names(x))
   expect_that(dim(x$o), is_equivalent_to(c(3, 6, 100)))
   expect_that(x$o[1,2,3], is_equivalent_to(4))
-  expect_that(round(x$p[2, "Tide"], 1), is_equivalent_to(0.3))
+  expect_that(round(x$p[2, 5], 2), is_equivalent_to(0.33))
 })  
 
 

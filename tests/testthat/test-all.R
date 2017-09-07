@@ -45,10 +45,10 @@ test_that("tests MNP on the Japanese election census", {
   x <- summary(res2)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  # expect_that(round(x$coef.table[2,1], 3), is_equivalent_to(1.129))
-  # expect_that(round(x$coef.table["education:LDP", "mean"], 3), is_equivalent_to(-0.109))
-  # expect_that(round(x$cov.table[2,3], 3), is_equivalent_to(0.937))
-  # expect_that(round(x$cov.table["LDP:NFP", "mean"], 3), is_equivalent_to(1.017))
+  expect_that(round(x$coef.table[12,2], 1), is_equivalent_to(0.0))
+  expect_that(round(x$coef.table["education:SKG", "mean"], 0), is_equivalent_to(0))
+  expect_that(round(x$cov.table[2,1], 0), is_equivalent_to(1))
+  expect_that(round(x$cov.table["LDP:LDP", "mean"], 0), is_equivalent_to(1))
   
   # calculate the predicted probabilities for the 10th observation
   # averaging over 100 additional Monte Carlo draws given each of MCMC draw.
@@ -56,6 +56,6 @@ test_that("tests MNP on the Japanese election census", {
   expect_that(length(x), is_equivalent_to(2))
   expect_true("p" %in% names(x))
   expect_that(dim(x$p), is_equivalent_to(c(1, 4, 5000)))
-  # expect_that(x$p[1,2,3], is_equivalent_to(0.33))
-  # expect_that(round(x$p[1, "JCP", 5000], 2), is_equivalent_to(0.13))
+  expect_that(x$x[1, "age:LDP"], is_equivalent_to(50))
+  expect_that(x$x[1, 1], is_equivalent_to(1))
 })  

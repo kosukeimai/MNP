@@ -29,7 +29,7 @@ test_that("tests MNP on the detergent data", {
   expect_true("p" %in% names(x))
   expect_that(dim(x$o), is_equivalent_to(c(3, 6, 100)))
   expect_that(as.numeric(round(x$p[1, "Tide"], 1)), equals(0.1))
-  expect_that(as.numeric(round(x$p[3, "Wisk"], 1)), equals(1.3))
+  expect_that(as.numeric(round(x$p[3, "Wisk"], 1)), equals(0.3))
 })  
 
 
@@ -59,3 +59,23 @@ test_that("tests MNP on the Japanese election census", {
   expect_that(x$x[1, "age:LDP"], is_equivalent_to(50))
   expect_that(x$x[1, 1], is_equivalent_to(1))
 })  
+
+# set random seed
+set.seed(12345)
+
+test_that("tests MNP on the detergent data", {
+  # load the detergent data
+  data(detergent)
+  # run the standard multinomial probit model with intercepts and the price
+  res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, Wisk=WiskPrice, 
+                                         EraPlus=EraPlusPrice, Solo=SoloPrice, All=AllPrice),
+              cXnames = "price", data = detergent, n.draws = 100, burnin = 10,thin = 3, 
+              verbose = TRUE)
+  # summarize the results
+  x <- summary(res1)
+  expect_that(length(x), is_equivalent_to(8))
+  expect_true("coef.table" %in% names(x))
+  expect_that(round(x$coef.table[4, 1], 5), equals(2.00358))
+  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 5), equals(1.07707))
+})  
+

@@ -154,6 +154,9 @@
 #' ### sets appear in Imai and van Dyk (2005b).
 #' ###
 #' 
+#' # set random seed
+#' set.seed(12345)
+#' 
 #' ## load the detergent data
 #' data(detergent)
 #' ## run the standard multinomial probit model with intercepts and the price

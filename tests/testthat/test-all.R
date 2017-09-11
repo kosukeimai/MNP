@@ -18,10 +18,10 @@ test_that("tests MNP on the detergent data", {
   x <- summary(res1)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_that(round(x$coef.table[4, 1], 2), equals(2.02))
-  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 4), equals(0.9588))
-  expect_that(round(x$cov.table[10, 1], 2), equals(0.78))
-  expect_that(round(x$cov.table["Wisk:Wisk", "std.dev."], 3), equals(0.169))
+  expect_that(round(x$coef.table[1, 1], 2), equals(1.90))
+  expect_that(round(x$coef.table["(Intercept):Tide", "mean"], 1), equals(2.0))
+  expect_that(round(x$cov.table[11, 1], 1), equals(0.3))
+  expect_that(round(x$cov.table["Tide:Tide", "std.dev."], 2), equals(0.09))
   
   # calculate the quantities of interest for the first 3 observations
   x <- predict(res1, newdata = detergent[1:3,])
@@ -45,8 +45,8 @@ test_that("tests MNP on the Japanese election census", {
   x <- summary(res2)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_that(round(x$coef.table[12,2], 1), is_equivalent_to(0.0))
-  expect_that(round(x$coef.table["education:SKG", "mean"], 0), is_equivalent_to(0))
+  expect_that(round(x$coef.table[12,2], 2), is_equivalent_to(0.01))
+  expect_that(round(x$coef.table["(Intercept):LDP", "97.5%"], 3), is_equivalent_to(1.602))
   expect_that(round(x$cov.table[2,1], 0), is_equivalent_to(1))
   expect_that(round(x$cov.table["LDP:LDP", "mean"], 0), is_equivalent_to(1))
   

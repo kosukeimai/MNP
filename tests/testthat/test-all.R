@@ -61,7 +61,7 @@ test_that("tests MNP on the Japanese election census", {
 })  
 
 # set random seed
-set.seed(12345)
+set.seed(123456)
 
 test_that("tests MNP to discover the difference between local and travis-ci", {
   # load the detergent data
@@ -79,11 +79,15 @@ test_that("tests MNP to discover the difference between local and travis-ci", {
   ############################################################
   # this only works for travis-ci
   # expect_that(round(x$coef.table[4, 1], 5), equals(2.00358))
-  # this only works for local "R CMD check --as-cran"
-  expect_that(round(x$coef.table[4, 1], 5), equals(2.01363))
+  # this only works for local "R CMD check --as-cran" (random seed 12345)
+  # expect_that(round(x$coef.table[4, 1], 5), equals(2.01363))
+  # with random seed 123456, the above should be
+  expect_that(round(x$coef.table[4, 1], 5), equals(1.9492))
   ############################################################
   
   # this happen to works for both local "R CMD check --as-cran" and travis-ci
-  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 3), equals(1.077))
+  # expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 3), equals(1.077))
+  # the previous works for random seed 12345, with random seed 123456, it should be
+  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 3), equals(1.033))
 })  
 

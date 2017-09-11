@@ -1,4 +1,8 @@
 language: r
+
+os: 
+- osx
+
 r:
   - release
   - devel

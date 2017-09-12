@@ -162,7 +162,6 @@ void cMNPgibbs(int *piNDim, int *piNCov, int *piNSamp, int *piNGen,
 	W[i][j] = (double)(Y[i][j]-Y[i][n_dim])/(double) n_dim;
       else /* you DON'T need to worry about ordering for this */
 	W[i][j] = Xbeta[i][j] + norm_rand();
-      printf("W[i,j] at line164 %14g\n", W[i][j]);
     }
     W[i][n_dim]=0.0;
   }

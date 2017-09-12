@@ -168,13 +168,16 @@ standard errors to be larger when there is more missing data.
 ### sets appear in Imai and van Dyk (2005b).
 ###
 
+# set random seed
+set.seed(12345)
+
 ## load the detergent data
 data(detergent)
 ## run the standard multinomial probit model with intercepts and the price
 res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
                                        Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                        Solo=SoloPrice, All=AllPrice),
-            cXnames = "price", data = detergent, n.draws = 100, burnin = 10,
+            cXnames = "price", data = detergent, n.draws = 500, burnin = 100,
             thin = 3, verbose = TRUE)
 ## summarize the results
 summary(res1)

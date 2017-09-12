@@ -162,7 +162,7 @@ void cMNPgibbs(int *piNDim, int *piNCov, int *piNSamp, int *piNGen,
 	W[i][j] = (double)(Y[i][j]-Y[i][n_dim])/(double) n_dim;
       else /* you DON'T need to worry about ordering for this */
 	W[i][j] = Xbeta[i][j] + norm_rand();
-      if (i + j < 10) printf("W[i,j] at line164 %14g\n", W[i][j]);
+      printf("W[i,j] at line164 %14g\n", W[i][j]);
     }
     W[i][n_dim]=0.0;
   }
@@ -401,8 +401,6 @@ void cMNPgibbs(int *piNDim, int *piNCov, int *piNSamp, int *piNGen,
       }
     }
   } /* end of Gibbs sampler */
-  
-  for (i=0; i<=itempS; i++) printf("psStore[%d] = %g\n", i, pdStore[i]);
   
   /** write out the random seed **/
   PutRNGstate();

@@ -1,5 +1,6 @@
 rm(list=ls())
 library(MNP)
+library(testthat)
 context("tests MNP")
 
 # set random seed

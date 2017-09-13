@@ -3,40 +3,40 @@ library(MNP)
 library(testthat)
 context("tests MNP")
 
-# set random seed
-set.seed(12345)
-
 test_that("tests MNP on the detergent data", {
+  # set random seed
+  set.seed(12345)
+  
   # load the detergent data
   data(detergent)
   # run the standard multinomial probit model with intercepts and the price
   res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
               Wisk=WiskPrice, EraPlus=EraPlusPrice, Solo=SoloPrice, All=AllPrice),
-              cXnames = "price", data = detergent, n.draws = 500, burnin = 100,
+              cXnames = "price", data = detergent, n.draws = 30, burnin = 10,
               thin = 3, verbose = TRUE)
   # summarize the results
   x <- summary(res1)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_that(round(x$coef.table[4, 1], 0), equals(2))
-  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 0), equals(1))
-  expect_that(round(x$cov.table[10, 1], 0), equals(1))
-  expect_that(round(x$cov.table["Tide:Tide", "std.dev."], 0), equals(0))
+  expect_equal(x$coef.table[4, 1], 1.864768, tolerance = 0.001)
+  expect_equal(x$coef.table["(Intercept):Solo", "2.5%"], 1.108233, tolerance = 0.001)
+  expect_equal(x$cov.table[10, 1], 0.9855489, tolerance = 0.001)
+  expect_equal(x$cov.table["Tide:Tide", "mean"], 0.7952514, tolerance = 0.001)
   
   # calculate the quantities of interest for the first 3 observations
   x <- predict(res1, newdata = detergent[1:3,])
   expect_that(length(x), is_equivalent_to(4))
   expect_true("p" %in% names(x))
-  expect_that(dim(x$o), is_equivalent_to(c(3, 6, 100)))
-  expect_that(as.numeric(round(x$p[1, "Tide"], 1)), equals(0.1))
-  expect_that(as.numeric(round(x$p[3, "Wisk"], 1)), equals(0.3))
+  expect_that(dim(x$o), is_equivalent_to(c(3, 6, 5)))
+  expect_equal(as.numeric(x$p[1, 3]), 0.2, tolerance = 0.05)
+  expect_equal(as.numeric(x$p[3, "Wisk"]), 0.4, tolerance = 0.05)
 })  
 
 
-# set random seed
-set.seed(12345)
-
 test_that("tests MNP on the Japanese election census", {
+  # set random seed
+  set.seed(12345)
+
   # load the Japanese election data
   data(japan)
   # run the multinomial probit model with ordered preferences
@@ -45,11 +45,11 @@ test_that("tests MNP on the Japanese election census", {
   x <- summary(res2)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_that(round(x$coef.table[12,2], 1), is_equivalent_to(0.0))
-  expect_that(round(x$coef.table["education:SKG", "mean"], 0), is_equivalent_to(0))
-  expect_that(round(x$cov.table[2,1], 0), is_equivalent_to(1))
-  expect_that(round(x$cov.table["LDP:LDP", "mean"], 0), is_equivalent_to(1))
-  
+  expect_equal(x$coef.table[12,2],0.005049093, tolerance = 0.001)
+  expect_equal(x$coef.table["education:SKG", "mean"], -0.009145174, tolerance = 0.001)
+  expect_equal(x$cov.table[2,1],1.01725, tolerance = 0.001)
+  expect_equal(x$cov.table["LDP:LDP", "mean"], 0.9667556, tolerance = 0.001)
+
   # calculate the predicted probabilities for the 10th observation
   # averaging over 100 additional Monte Carlo draws given each of MCMC draw.
   x <- predict(res2, newdata = japan[10,], type = "prob", n.draws = 100, verbose = TRUE)
@@ -60,30 +60,4 @@ test_that("tests MNP on the Japanese election census", {
   expect_that(x$x[1, 1], is_equivalent_to(1))
 })  
 
-# set random seed
-set.seed(12345)
-
-test_that("tests MNP to discover the difference between local and travis-ci", {
-  # load the detergent data
-  data(detergent)
-  # run the standard multinomial probit model with intercepts and the price
-  res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, Wisk=WiskPrice, 
-                                         EraPlus=EraPlusPrice, Solo=SoloPrice, All=AllPrice),
-              cXnames = "price", data = detergent, n.draws = 100, burnin = 10,thin = 3, 
-              verbose = TRUE)
-  # summarize the results
-  x <- summary(res1)
-  expect_that(length(x), is_equivalent_to(8))
-  expect_true("coef.table" %in% names(x))
-  
-  ############################################################
-  # this only works for travis-ci
-  #expect_that(round(x$coef.table[4, 1], 5), equals(2.00358))
-  # this only works for local "R CMD check --as-cran"
-  #expect_that(round(x$coef.table[4, 1], 5), equals(2.01363))
-  ############################################################
-  
-  # this happen to works for both local "R CMD check --as-cran" and travis-ci
-  expect_that(round(x$coef.table["(Intercept):Solo", "2.5%"], 3), equals(1.077))
-})  
 

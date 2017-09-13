@@ -8,7 +8,8 @@ Authors@R: c(
   person("Hubert", "Jin", , "hubertj@princeton.edu", c("ctb"))
   )
 Maintainer: Kosuke Imai <kimai@princeton.edu>
-Depends: R (>= 2.1), MASS, utils, testthat
+Depends: R (>= 2.1), MASS, utils
+Suggests: testthat
 Description: Fits the Bayesian multinomial probit model via Markov chain
  Monte Carlo.  The multinomial probit model is often used to analyze 
  the discrete choices made by individuals recorded in survey data. 

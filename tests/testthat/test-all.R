@@ -45,8 +45,6 @@ test_that("tests MNP on the Japanese election census", {
   x <- summary(res2)
   expect_that(length(x), is_equivalent_to(8))
   expect_true("coef.table" %in% names(x))
-  expect_equal(x$coef.table[3, 1], 0.4108359, tolerance = 0.01)
-  expect_equal(x$coef.table["gendermale:NFP", "2.5%"], -0.5125132, tolerance = 0.01)
   expect_equal(x$cov.table[2,1], 1.01725, tolerance = 0.01)
   expect_equal(x$cov.table["LDP:LDP", "mean"], 0.9667556, tolerance = 0.01)
 

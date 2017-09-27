@@ -1,6 +1,6 @@
 Package: MNP
-Version: 3.0-2
-Date: 2017-06-28
+Version: 3.1-0
+Date: 2017-09-27
 Title: R Package for Fitting the Multinomial Probit Model 
 Authors@R: c(
   person("Kosuke", "Imai", , "kimai@princeton.edu", c("aut", "cre")),

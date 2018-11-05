@@ -3,11 +3,11 @@ Version: 3.1-0
 Date: 2017-09-27
 Title: R Package for Fitting the Multinomial Probit Model 
 Authors@R: c(
-  person("Kosuke", "Imai", , "kimai@princeton.edu", c("aut", "cre")),
+  person("Kosuke", "Imai", , "imai@harvard.edu", c("aut", "cre")),
   person("David", "van Dyk", , "dvandyk@imperial.ac.uk", c("aut")),
   person("Hubert", "Jin", , "hubertj@princeton.edu", c("ctb"))
   )
-Maintainer: Kosuke Imai <kimai@princeton.edu>
+Maintainer: Kosuke Imai <imai@Harvard.edu>
 Depends: R (>= 2.1), MASS, utils
 Suggests: testthat
 Description: Fits the Bayesian multinomial probit model via Markov chain
@@ -30,7 +30,7 @@ Description: Fits the Bayesian multinomial probit model via Markov chain
 LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)
-URL: http://imai.princeton.edu/software/MNP.html
+URL: https://github.com/kosukeimai/MNP
 BugReports: https://github.com/kosukeimai/MNP/issues
 NeedsCompilation: yes
 RoxygenNote: 6.0.1

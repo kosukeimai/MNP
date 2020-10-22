@@ -20,8 +20,8 @@ Description: Fits the Bayesian multinomial probit model via Markov chain
  each individual, and complete or partial individual choice orderings 
  of the available alternatives from the choice set. The estimation is
  based on the efficient marginal data augmentation algorithm that is 
- developed by Imai and van Dyk (2005). ``A Bayesian Analysis of the 
- Multinomial Probit Model Using the Data Augmentation,'' Journal of 
+ developed by Imai and van Dyk (2005). "A Bayesian Analysis of the 
+ Multinomial Probit Model Using the Data Augmentation." Journal of 
  Econometrics, Vol. 124, No. 2 (February), pp. 311-334. 
  <doi:10.1016/j.jeconom.2004.02.002>  Detailed examples are given in 
  Imai and van Dyk (2005). "MNP: R Package for Fitting the Multinomial 

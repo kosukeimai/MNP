@@ -1,13 +1,13 @@
 Package: MNP
-Version: 3.1-0
-Date: 2017-09-27
+Version: 3.1-1
+Date: 2020-10-22
 Title: R Package for Fitting the Multinomial Probit Model 
 Authors@R: c(
   person("Kosuke", "Imai", , "imai@harvard.edu", c("aut", "cre")),
   person("David", "van Dyk", , "dvandyk@imperial.ac.uk", c("aut")),
   person("Hubert", "Jin", , "hubertj@princeton.edu", c("ctb"))
   )
-Maintainer: Kosuke Imai <imai@Harvard.edu>
+Maintainer: Kosuke Imai <imai@harvard.edu>
 Depends: R (>= 2.1), MASS, utils
 Suggests: testthat
 Description: Fits the Bayesian multinomial probit model via Markov chain
@@ -23,10 +23,10 @@ Description: Fits the Bayesian multinomial probit model via Markov chain
  developed by Imai and van Dyk (2005). ``A Bayesian Analysis of the 
  Multinomial Probit Model Using the Data Augmentation,'' Journal of 
  Econometrics, Vol. 124, No. 2 (February), pp. 311-334. 
- <DOI:10.1016/j.jeconom.2004.02.002>  Detailed examples are given in 
+ <doi:10.1016/j.jeconom.2004.02.002>  Detailed examples are given in 
  Imai and van Dyk (2005). ``MNP: R Package for Fitting the Multinomial 
  Probit Model.''  Journal of Statistical Software, Vol. 14, No. 3 (May), 
- pp. 1-32. <DOI:10.18637/jss.v014.i03>.
+ pp. 1-32. <doi:10.18637/jss.v014.i03>.
 LazyLoad: yes
 LazyData: yes
 License: GPL (>= 2)

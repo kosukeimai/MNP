@@ -1,6 +1,8 @@
 %\VignetteIndexEntry{MNP}
 
 \documentclass[11pt]{article}
+\usepackage{hyperref}
+\usepackage{Rd}
 
 %% === margins ===
 \addtolength{\hoffset}{-0.35in} 
@@ -17,13 +19,11 @@
 \bibliographystyle{natbib}
 %% === hyperref options ===
 \usepackage{color}
-\usepackage[pdftex, bookmarksopen=true, 
-bookmarksnumbered=true, linkcolor=webred]{hyperref}
+%\usepackage[pdftex, bookmarksopen=true,bookmarksnumbered=true, linkcolor=webred]{hyperref}
 \definecolor{webgreen}{rgb}{0, 0.5, 0}
 \definecolor{webblue}{rgb}{0, 0, 0.5}
 \definecolor{webred}{rgb}{0.5, 0, 0}
 
-\usepackage{Rd}
 
 % == spacing between sections and subsections
 \usepackage[compact]{titlesec} 
@@ -40,6 +40,7 @@ bookmarksnumbered=true, linkcolor=webred]{hyperref}
 
 
 \begin{document}
+\SweaveOpts{concordance=TRUE}
 
 \newcommand\dist{\buildrel\rm d\over\sim}
 \newcommand\al{\alpha}
@@ -86,16 +87,14 @@ bookmarksnumbered=true, linkcolor=webred]{hyperref}
     DMS-04-06085, and by the Committee on Research in the Humanities
     and Social Sciences at Princeton University.}}
          
-\author{Kosuke Imai\thanks{Professor, Department of
-    Politics, Princeton University, Princeton, NJ 08544. Phone:
-    609--258--6610, Fax: 609-258-1110, Email:
-    \href{mailto:kimai@Princeton.Edu}{kimai@Princeton.Edu}, URL:
-    \href{http://imai.princeton.edu}{http://imai.princeton.edu}
-    Department of Politics, Princeton University}\\
-  David A. van Dyk\thanks{Associate Professor, Department of
-    Statistics, University of California, Irvine, CA 92697-1205.
-    Phone: 949--824--5679, Fax: 949--824--9863, Email:
-    \href{mailto:dvd@uci.edu}{dvd@uci.edu}}}
+\author{Kosuke Imai\thanks{Professor, Department of Government and Department of
+      Statistics, Harvard University.  1737 Cambridge Street,
+      Institute for Quantitative Social Science, Cambridge MA 02138.
+      Email: \href{mailto:imai@harvard.edu}{imai@harvard.edu} URL:
+      \href{https://imai.fas.harvard.edu}{https://imai.fas.harvard.edu}}\\
+  David A. van Dyk\thanks{Professor, Statistics Section,
+Department of Mathematics, Imperial College London,
+London, UK SW7 2AZ. Email: \href{mailto:dvandyk@imperial.ac.uk}{dvandyk@imperial.ac.uk}}}
 
 \date{Version 3.1--1}
 

@@ -1,7 +1,6 @@
 %\VignetteIndexEntry{MNP}
 
 \documentclass[11pt]{article}
-\usepackage{Rd}
 
 %% === margins ===
 \addtolength{\hoffset}{-0.35in} 
@@ -23,6 +22,8 @@ bookmarksnumbered=true, linkcolor=webred]{hyperref}
 \definecolor{webgreen}{rgb}{0, 0.5, 0}
 \definecolor{webblue}{rgb}{0, 0, 0.5}
 \definecolor{webred}{rgb}{0.5, 0, 0}
+
+\usepackage{Rd}
 
 % == spacing between sections and subsections
 \usepackage[compact]{titlesec} 
@@ -96,7 +97,7 @@ bookmarksnumbered=true, linkcolor=webred]{hyperref}
     Phone: 949--824--5679, Fax: 949--824--9863, Email:
     \href{mailto:dvd@uci.edu}{dvd@uci.edu}}}
 
-\date{Version 3.1--0}
+\date{Version 3.1--1}
 
 \pdfbookmark[1]{Title Page}{Title Page}
 \maketitle

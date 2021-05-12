@@ -1,6 +1,6 @@
 Package: MNP
-Version: 3.1-1
-Date: 2020-10-22
+Version: 3.1-2
+Date: 2021-05-12
 Title: Fitting the Multinomial Probit Model 
 Authors@R: c(
   person("Kosuke", "Imai", , "imai@harvard.edu", c("aut", "cre")),

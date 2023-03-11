@@ -146,6 +146,7 @@
 #' restriction for the Bayesian multinomial probit model,} \emph{Technical
 #' report}, Department of Statistics, University of Wisconsin, Madison.
 #' @keywords models
+#' @useDynLib MNP, .registration = TRUE
 #' @examples
 #' 
 #' ###

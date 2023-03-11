@@ -70,8 +70,8 @@
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
-#' @export 
 #' @method predict mnp
+#' @exportS3Method predict mnp
 predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
                         type = c("prob", "choice", "order"),
                         verbose = FALSE, ...){
@@ -96,7 +96,7 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
     x <- object$x
   else {
     call <- object$call
-    x <- xmatrix.mnp(as.formula(call$formula), data = newdata,
+    x <- xmatrix.mnp(stats::as.formula(call$formula), data = newdata,
                      choiceX = call$choiceX,
                      cXnames = eval(call$cXnames),
                      base = object$base, n.dim = p-1,

@@ -4,14 +4,16 @@
 \name{detergent}
 \alias{detergent}
 \title{Detergent Brand Choice}
-\format{A data frame containing the following 7 variables and 2657
+\format{
+A data frame containing the following 7 variables and 2657
 observations.
 
 \tabular{lll}{ choice \tab factor \tab a brand chosen by each household\cr
 TidePrice \tab numeric \tab log price of Tide\cr WiskPrice \tab numeric \tab
 log price of Wisk\cr EraPlusPrice \tab numeric \tab log price of EraPlus\cr
 SurfPrice \tab numeric \tab log price of Surf\cr SoloPrice \tab numeric \tab
-log price of Solo\cr AllPrice \tab numeric \tab log price of All\cr }}
+log price of Solo\cr AllPrice \tab numeric \tab log price of All\cr }
+}
 \description{
 This dataset gives the laundry detergent brand choice by households and the
 price of each brand.

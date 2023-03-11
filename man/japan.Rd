@@ -4,7 +4,8 @@
 \name{japan}
 \alias{japan}
 \title{Voters' Preferences of Political Parties in Japan (1995)}
-\format{A data frame containing the following 7 variables for 418
+\format{
+A data frame containing the following 7 variables for 418
 observations.
 
 \tabular{llll}{ LDP \tab numeric \tab preference for Liberal Democratic
@@ -13,7 +14,8 @@ Party \tab 0 - 100 \cr SKG \tab numeric \tab preference for Sakigake \tab 0
 - 100 \cr JCP \tab numeric \tab preference for Japanese Communist Party \tab
 0 - 100 \cr gender \tab factor \tab gender of each voter \tab \code{male} or
 \code{female} \cr education \tab numeric \tab levels of education for each
-voter \tab \cr age \tab numeric \tab age of each voter \tab }}
+voter \tab \cr age \tab numeric \tab age of each voter \tab }
+}
 \description{
 This dataset gives voters' preferences of political parties in Japan on the
 0 (least preferred) - 100 (most preferred) scale.  It is based on the 1995

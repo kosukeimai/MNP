@@ -22,16 +22,17 @@
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
-#' @export summary.mnp
+#' @method summary mnp
+#' @exportS3Method summary mnp
 summary.mnp <- function(object, CI=c(2.5, 97.5),...){
 
   p <- object$n.alt
   param <- object$param
   n.cov <- ncol(param) - p*(p-1)/2
   n.draws <- nrow(param)
-  param.table <- cbind(apply(param, 2, mean), apply(param, 2, sd),
-                       apply(param, 2, quantile, min(CI)/100),
-                       apply(param, 2, quantile, max(CI)/100)) 
+  param.table <- cbind(apply(param, 2, mean), apply(param, 2, stats::sd),
+                       apply(param, 2, stats::quantile, min(CI)/100),
+                       apply(param, 2, stats::quantile, max(CI)/100)) 
   colnames(param.table) <- c("mean", "std.dev.", paste(min(CI), "%", sep=""),
                              paste(max(CI), "%", sep=""))
   rownames(param.table) <- colnames(param)

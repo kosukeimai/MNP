@@ -1,6 +1,6 @@
 ymatrix.mnp <- function(data, base=NULL, extra=FALSE, verbose=verbose) { 
   ## checking and formatting Y
-  Y <- model.response(data)
+  Y <- stats::model.response(data)
   if (is.matrix(Y)) { # Multinomial ordered Probit model
     for (i in 1:nrow(Y))
       Y[i,] <- match(Y[i,], sort(unique(Y[i,]))) - 1
@@ -15,7 +15,7 @@ ymatrix.mnp <- function(data, base=NULL, extra=FALSE, verbose=verbose) {
     lev <- levels(Y)
     if (!is.null(base))
       if (base %in% lev) {
-        Y <- relevel(Y, ref = base)
+        Y <- stats::relevel(Y, ref = base)
         lev <- levels(Y)
       } else {
         stop(paste("Error: `base' does not exist in the response variable."))

@@ -4,8 +4,15 @@
 \alias{predict.mnp}
 \title{Posterior Prediction under the Bayesian Multinomial Probit Models}
 \usage{
-\method{predict}{mnp}(object, newdata = NULL, newdraw = NULL, n.draws = 1,
-  type = c("prob", "choice", "order"), verbose = FALSE, ...)
+\method{predict}{mnp}(
+  object,
+  newdata = NULL,
+  newdraw = NULL,
+  n.draws = 1,
+  type = c("prob", "choice", "order"),
+  verbose = FALSE,
+  ...
+)
 }
 \arguments{
 \item{object}{An output object from \code{mnp}.}

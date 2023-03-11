@@ -10,7 +10,8 @@
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
-#' @export print.summary.mnp
+#' @method print summary.mnp
+#' @exportS3Method print summary.mnp
 print.summary.mnp <- function(x, digits = max(3, getOption("digits") - 3), ...) {
 
   cat("\nCall:\n")
@@ -18,10 +19,10 @@ print.summary.mnp <- function(x, digits = max(3, getOption("digits") - 3), ...) 
       sep = "") 
 
   cat("\nCoefficients:\n")
-  printCoefmat(x$coef.table, digits = digits, na.print = "NA", ...)
+  stats::printCoefmat(x$coef.table, digits = digits, na.print = "NA", ...)
   
   cat("\nCovariances:\n")
-  printCoefmat(x$cov.table, digits = digits, na.print = "NA", ...)
+  stats::printCoefmat(x$cov.table, digits = digits, na.print = "NA", ...)
   
   cat("\nBase category:", x$base)  
   cat("\nNumber of alternatives:", x$n.alt)

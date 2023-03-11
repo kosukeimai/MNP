@@ -11,7 +11,7 @@ xmatrix.mnp <- function(formula, data = parent.frame(), choiceX=NULL,
   mf$na.action <- 'na.pass'
   mf <- eval.parent(mf)
   Terms <- attr(mf, "terms")
-  X <- model.matrix.default(Terms, mf)
+  X <- stats::model.matrix.default(Terms, mf)
   xvars <- as.character(attr(Terms, "variables"))[-1]
   if ((yvar <- attr(Terms, "response")) > 0)
     xvars <- xvars[-yvar]

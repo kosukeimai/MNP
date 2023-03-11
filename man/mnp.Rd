@@ -5,11 +5,25 @@
 \alias{MNP}
 \title{Fitting the Multinomial Probit Model via Markov chain Monte Carlo}
 \usage{
-mnp(formula, data = parent.frame(), choiceX = NULL, cXnames = NULL,
-  base = NULL, latent = FALSE, invcdf = FALSE, trace = TRUE,
-  n.draws = 5000, p.var = "Inf", p.df = n.dim + 1, p.scale = 1,
-  coef.start = 0, cov.start = 1, burnin = 0, thin = 0,
-  verbose = FALSE)
+mnp(
+  formula,
+  data = parent.frame(),
+  choiceX = NULL,
+  cXnames = NULL,
+  base = NULL,
+  latent = FALSE,
+  invcdf = FALSE,
+  trace = TRUE,
+  n.draws = 5000,
+  p.var = "Inf",
+  p.df = n.dim + 1,
+  p.scale = 1,
+  coef.start = 0,
+  cov.start = 1,
+  burnin = 0,
+  thin = 0,
+  verbose = FALSE
+)
 }
 \arguments{
 \item{formula}{A symbolic description of the model to be fit specifying the

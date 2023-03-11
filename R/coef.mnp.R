@@ -20,7 +20,8 @@
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}, \code{cov.mnp}; 
 #' @keywords methods
-#' @export coef.mnp
+#' @method coef mnp
+#' @exportS3Method coef mnp
 coef.mnp <- function(object, subset = NULL, ...) {
   param <- object$param
   p <- object$n.alt

@@ -1,18 +1,18 @@
 #' Fitting the Multinomial Probit Model via Markov chain Monte Carlo
-#' 
+#'
 #' \code{mnp} is used to fit (Bayesian) multinomial probit model via Markov
 #' chain Monte Carlo.  \code{mnp} can also fit the model with different choice
 #' sets for each observation, and complete or partial ordering of all the
 #' available alternatives. The computation uses the efficient marginal data
 #' augmentation algorithm that is developed by Imai and van Dyk (2005a).
-#' 
+#'
 #' To fit the multinomial probit model when only the most preferred choice is
 #' observed, use the syntax for the formula, \code{y ~ x1 + x2}, where \code{y}
 #' is a factor variable indicating the most preferred choice and \code{x1} and
 #' \code{x2} are individual-specific covariates. The interactions of
 #' individual-specific variables with each of the choice indicator variables
 #' will be fit.
-#' 
+#'
 #' To specify choice-specific covariates, use the syntax,
 #' \code{choiceX=list(A=cbind(z1, z2), B=cbind(z3, z4), C=cbind(z5, z6))},
 #' where \code{A}, \code{B}, and \code{C} represent the choice names of the
@@ -23,7 +23,7 @@
 #' "quantity")} need to be specified, where \code{price} refers to the
 #' coefficient name for \code{z1}, \code{z3}, and \code{z5}, and
 #' \code{quantity} refers to that for \code{z2}, \code{z4}, and \code{z6}.
-#' 
+#'
 #' If the choice set varies from one observation to another, use the syntax,
 #' \code{cbind(y1, y2, y3) ~ x1 + x2}, in the case of a three choice problem,
 #' and indicate unavailable alternatives by \code{NA}. If only the most
@@ -31,7 +31,7 @@
 #' indicator variables that take on the value one for individuals who prefer
 #' that choice and zero otherwise. The last column of the response matrix,
 #' \code{y3} in this particular example syntax, is used as the base category.
-#' 
+#'
 #' To fit the multinomial probit model when the complete or partial ordering of
 #' the available alternatives is recorded, use the same syntax as when the
 #' choice set varies (i.e., \code{cbind(y1, y2, y3, y4) ~ x1 + x2}). For each
@@ -42,7 +42,7 @@
 #' specified covariates. The resulting uncertainty estimates of the parameters
 #' will properly reflect the amount of missing data. For example, we expect the
 #' standard errors to be larger when there is more missing data.
-#' 
+#'
 #' @aliases mnp MNP
 #' @param formula A symbolic description of the model to be fit specifying the
 #' response variable and covariates. The formula should not include the
@@ -104,57 +104,57 @@
 #' @return An object of class \code{mnp} containing the following elements:
 #' \item{param}{A matrix of the Gibbs draws for each parameter; i.e., the
 #' coefficients and covariance matrix. For the covariance matrix, the elements
-#' on or above the diagonal are returned.  } 
+#' on or above the diagonal are returned.  }
 #' \item{call}{The matched call.}
-#' \item{x}{The matrix of covariates.} 
+#' \item{x}{The matrix of covariates.}
 #' \item{y}{The vector or matrix of the
-#' response variable.} 
+#' response variable.}
 #' \item{w}{The three dimensional array of the latent
 #' variable, W. The first dimension represents the alternatives, and the second
 #' dimension indexes the observations. The third dimension represents the Gibbs
 #' draws. Note that the latent variable for the base category is set to 0, and
-#' therefore omitted from the output.} 
+#' therefore omitted from the output.}
 #' \item{alt}{The names of alternatives.}
-#' \item{n.alt}{The total number of alternatives.} 
+#' \item{n.alt}{The total number of alternatives.}
 #' \item{base}{The base
-#' category used for fitting.} 
-#' \item{invcdf}{The value of 
+#' category used for fitting.}
+#' \item{invcdf}{The value of
 #' \code{invcdf}.}
-#' \item{p.var}{The prior variance for the coefficients.} 
+#' \item{p.var}{The prior variance for the coefficients.}
 #' \item{p.df}{The prior
-#' degrees of freedom parameter for the covariance matrix.} 
+#' degrees of freedom parameter for the covariance matrix.}
 #' \item{p.scale}{The
-#' prior scale matrix for the covariance matrix.} 
+#' prior scale matrix for the covariance matrix.}
 #' \item{burnin}{The number of
-#' initial burnin draws.} 
+#' initial burnin draws.}
 #' \item{thin}{The thinning interval.}
 #' @author Kosuke Imai, Department of Politics, Princeton University
 #' \email{kimai@@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
 #' Dyk, Statistics Section, Department of Mathematics, Imperial College London.
-#' @seealso \code{coef.mnp}, \code{cov.mnp}, \code{predict.mnp},
-#' \code{summary.mnp}; 
+#' @seealso \code{coef.mnp}, \code{vcov.mnp}, \code{predict.mnp},
+#' \code{summary.mnp};
 #' @references Imai, Kosuke and David A. van Dyk. (2005a) \dQuote{A Bayesian
 #' Analysis of the Multinomial Probit Model Using the Marginal Data
 #' Augmentation,} \emph{Journal of Econometrics}, Vol. 124, No. 2 (February),
 #' pp.311-334.
-#' 
+#'
 #' Imai, Kosuke and David A. van Dyk. (2005b) \dQuote{MNP: R Package for
 #' Fitting the Multinomial Probit Models,} \emph{Journal of Statistical
 #' Software}, Vol. 14, No. 3 (May), pp.1-32.
-#' 
+#'
 #' Burgette, L.F. and E.V. Nordheim. (2009).  \dQuote{An alternate identifying
 #' restriction for the Bayesian multinomial probit model,} \emph{Technical
 #' report}, Department of Statistics, University of Wisconsin, Madison.
 #' @keywords models
 #' @useDynLib MNP, .registration = TRUE
 #' @examples
-#' 
+#'
 #' ###
 #' ### NOTE: this example is not fully analyzed. In particular, the
 #' ### convergence has not been assessed. A full analysis of these data
 #' ### sets appear in Imai and van Dyk (2005b).
 #' ###
-#' 
+#'
 #' ## load the detergent data
 #' data(detergent)
 #' ## run the standard multinomial probit model with intercepts and the price
@@ -167,7 +167,7 @@
 #' summary(res1)
 #' ## calculate the quantities of interest for the first 3 observations
 #' pre1 <- predict(res1, newdata = detergent[1:3,])
-#' 
+#'
 #' ## load the Japanese election data
 #' data(japan)
 #' ## run the multinomial probit model with ordered preferences
@@ -179,27 +179,27 @@
 #' ## averaging over 100 additional Monte Carlo draws given each of MCMC draw.
 #' pre2 <- predict(res2, newdata = japan[10,], type = "prob", n.draws = 100,
 #'                 verbose = TRUE)
-#' 
+#'
 #' @export mnp
 mnp <- function(formula, data = parent.frame(), choiceX = NULL,
                 cXnames = NULL, base = NULL, latent = FALSE,
-                invcdf = FALSE, trace = TRUE, n.draws = 5000, p.var = "Inf", 
+                invcdf = FALSE, trace = TRUE, n.draws = 5000, p.var = "Inf",
                 p.df = n.dim+1, p.scale = 1, coef.start = 0,
-                cov.start = 1, burnin = 0, thin = 0, verbose = FALSE) {   
+                cov.start = 1, burnin = 0, thin = 0, verbose = FALSE) {
   call <- match.call()
   mf <- match.call(expand.dots = FALSE)
   mf$choiceX <- mf$cXnames <- mf$base <- mf$n.draws <- mf$latent <-
     mf$p.var <- mf$p.df <- mf$p.scale <- mf$coef.start <- mf$invcdf <-
-      mf$trace <- mf$cov.start <- mf$verbose <- mf$burnin <- mf$thin <- NULL   
+      mf$trace <- mf$cov.start <- mf$verbose <- mf$burnin <- mf$thin <- NULL
   mf[[1]] <- as.name("model.frame")
   mf$na.action <- 'na.pass'
   mf <- eval.parent(mf)
 
   ## fix this parameter
   p.alpha0 <- 1
-  
+
   ## obtaining Y
-  tmp <- ymatrix.mnp(mf, base=base, extra=TRUE, verbose=verbose)
+  tmp <- ymatrix.mnp(mf, base=base, extra=TRUE)
   Y <- tmp$Y
   MoP <- tmp$MoP
   lev <- tmp$lev
@@ -207,27 +207,27 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
   p <- tmp$p
   n.dim <- p - 1
   if(verbose)
-    cat("\nThe base category is `", base, "'.\n\n", sep="") 
+    cat("\nThe base category is `", base, "'.\n\n", sep="")
   if (p < 3)
     stop("The number of alternatives should be at least 3.")
-  if(verbose) 
-    cat("The total number of alternatives is ", p, ".\n\n", sep="") 
+  if(verbose)
+    cat("The total number of alternatives is ", p, ".\n\n", sep="")
   if(verbose) {
     if (trace)
       cat("The trace restriction is used instead of the diagonal restriction.\n\n")
     else
       cat("The diagonal restriction is used instead of the trace restriction.\n\n")
   }
-  
+
   ### obtaining X
   tmp <- xmatrix.mnp(formula, data=eval.parent(data),
-                     choiceX=call$choiceX, cXnames=cXnames, 
+                     choiceX=call$choiceX, cXnames=cXnames,
                      base=base, n.dim=n.dim, lev=lev, MoP=MoP,
                      verbose=verbose, extra=TRUE)
   X <- tmp$X
   coefnames <- tmp$coefnames
   n.cov <- ncol(X) / n.dim
-  
+
   ## listwise deletion for X
   na.ind <- apply(is.na(X), 1, sum)
   if (ncol(Y) == 1)
@@ -235,7 +235,7 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
   Y <- Y[na.ind==0,]
   X <- X[na.ind==0,]
   n.obs <- nrow(X)
-  
+
   if (verbose) {
     cat("The dimension of beta is ", n.cov, ".\n\n", sep="")
     cat("The number of observations is ", n.obs, ".\n\n", sep="")
@@ -247,10 +247,10 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
         cat((1:length(na.ind))[na.ind>0], "\n\n")
       }
     }
-  } 
-  
+  }
+
   ## checking the prior for beta
-  p.imp <- FALSE 
+  p.imp <- FALSE
   if (p.var == Inf) {
     p.imp <- TRUE
     p.prec <- diag(0, n.cov)
@@ -278,7 +278,7 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
     stop(paste("`p.df' must be at least ", n.dim, ".", sep=""))
   if (abs(as.integer(p.df) - p.df) > 0)
     stop("`p.df' must be a positive integer.")
-  if (!is.matrix(p.scale))  
+  if (!is.matrix(p.scale))
     p.scale <- diag(p.scale, n.dim)
   if (ncol(p.scale) != n.dim || nrow(p.scale) != n.dim)
     stop("`p.scale' must be ", n.dim, " x ", n.dim, sep="")
@@ -293,7 +293,7 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
     for(k in 1:n.dim)
       if (j<=k)
         Signames <- c(Signames, paste(if(MoP) lev[j] else lev[j+1],
-                                      ":", if(MoP) lev[k] else lev[k+1], sep="")) 
+                                      ":", if(MoP) lev[k] else lev[k+1], sep=""))
 
   ## checking starting values
   if (length(coef.start) == 1)
@@ -314,14 +314,14 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
     cov.start[1,1] <- 1
     warning("cov.start[1,1] will be set to 1.")
   }
-  
+
   ## checking thinnig and burnin intervals
   if (burnin < 0)
-    stop("`burnin' should be a non-negative integer.") 
+    stop("`burnin' should be a non-negative integer.")
   if (thin < 0)
     stop("`thin' should be a non-negative integer.")
   keep <- thin + 1
-  
+
   ## running the algorithm
   if (latent)
     n.par <- n.cov + n.dim*(n.dim+1)/2 + n.dim*n.obs
@@ -335,13 +335,13 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
   param <- .C("cMNPgibbs", as.integer(n.dim),
               as.integer(n.cov), as.integer(n.obs), as.integer(n.draws),
               as.double(p.mean), as.double(p.prec), as.integer(p.df),
-              as.double(p.scale*p.alpha0), as.double(X), as.integer(Y), 
-              as.double(coef.start), as.double(cov.start), 
+              as.double(p.scale*p.alpha0), as.double(X), as.integer(Y),
+              as.double(coef.start), as.double(cov.start),
               as.integer(p.imp), as.integer(invcdf),
               as.integer(burnin), as.integer(keep), as.integer(trace),
               as.integer(verbose), as.integer(MoP), as.integer(latent),
               pdStore = double(n.par*floor((n.draws-burnin)/keep)),
-              PACKAGE="MNP")$pdStore 
+              PACKAGE="MNP")$pdStore
   param <- matrix(param, ncol = n.par,
                   nrow = floor((n.draws-burnin)/keep), byrow=TRUE)
   if (latent) {
@@ -353,18 +353,18 @@ mnp <- function(formula, data = parent.frame(), choiceX = NULL,
   else
     W <- NULL
   colnames(param) <- c(coefnames, Signames)
-    
+
   ##recoding -1 back into NA
   Y[Y==-1] <- NA
 
   ## returning the object
   res <- list(param = param, x = X, y = Y, w = W, call = call, alt = lev,
               n.alt = p, base = base, invcdf = invcdf, trace = trace,
-              p.mean = if(p.imp) NULL else p.mean, p.var = p.var, 
-              p.df = p.df, p.scale = p.scale, burnin = burnin, thin = thin) 
+              p.mean = if(p.imp) NULL else p.mean, p.var = p.var,
+              p.df = p.df, p.scale = p.scale, burnin = burnin, thin = thin)
   class(res) <- "mnp"
   return(res)
 }
-  
+
 
 

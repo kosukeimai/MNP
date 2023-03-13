@@ -1,8 +1,8 @@
 #' Posterior Prediction under the Bayesian Multinomial Probit Models
-#' 
+#'
 #' Obtains posterior predictions under a fitted (Bayesian) multinomial probit
 #' model. \code{predict} method for class \code{mnp}.
-#' 
+#'
 #' The posterior predictive values are computed using the Monte Carlo sample
 #' stored in the \code{mnp} output (or other sample if \code{newdraw} is
 #' specified). Given each Monte Carlo sample of the parameters and each vector
@@ -18,7 +18,7 @@
 #' required and/or if a large Monte Carlo sample of the model parameters is
 #' used. In either case, setting \code{verbose = TRUE} may be helpful in
 #' monitoring the progress of the code.
-#' 
+#'
 #' @param object An output object from \code{mnp}.
 #' @param newdata An optional data frame containing the values of the predictor
 #' variables. Predictions for multiple values of the predictor variables can be
@@ -41,15 +41,15 @@
 #' progress report on the Monte Carlo sampling from the posterior predictive
 #' distributions are printed on the screen. The default is \code{FALSE}.
 #' @param ... additional arguments passed to other methods.
-#' @return \code{predict.mnp} yields a list of class 
-#' \code{predict.mnp} containing at least one of the following elements: 
+#' @return \code{predict.mnp} yields a list of class
+#' \code{predict.mnp} containing at least one of the following elements:
 #' \item{o}{A three dimensional array of the Monte Carlo sample from the posterior predictive
 #' distribution of the ordered preferences. The first dimension corresponds to
 #' the rows of \code{newdata} (or the original data set if \code{newdata} is
 #' left unspecified), the second dimension corresponds to the alternatives in
 #' the choice set, and the third dimension indexes the Monte Carlo sample. If
 #' \code{n.draws} is greater than 1, then each entry will be an average over
-#' these additional draws.  } 
+#' these additional draws.  }
 #' \item{p}{A two or three dimensional array of the
 #' posterior predictive probabilities for each alternative in the choice set
 #' being most preferred. The first demension corresponds to the rows of
@@ -57,20 +57,19 @@
 #' unspecified), the second dimension corresponds to the alternatives in the
 #' choice set, and the third dimension (if it exists) indexes the Monte Carlo
 #' sample. If \code{n.draws} is greater than 1, then the third diemsion exists
-#' and indexes the Monte Carlo sample.  } 
+#' and indexes the Monte Carlo sample.  }
 #' \item{y}{A matrix of the Monte Carlo
 #' sample from the posterior predictive distribution of the most preferred
 #' choice. The first dimension correspond to the rows of \code{newdata} (or the
 #' original data set if \code{newdata} is left unspecified), and the second
 #' dimension indexes the Monte Carlo sample. \code{n.draws} will be set to 1
-#' when computing this quantity of interest.  } 
+#' when computing this quantity of interest.  }
 #' \item{x}{A matrix of covariates
 #' used for prediction }
 #' @author Kosuke Imai, Department of Politics, Princeton University
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
-#' @method predict mnp
 #' @exportS3Method predict mnp
 predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
                         type = c("prob", "choice", "order"),
@@ -82,7 +81,7 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
     stop("Invalid input for `n.draws'.")
 
   p <- object$n.alt
-  if (is.null(newdraw)) 
+  if (is.null(newdraw))
     param <- object$param
   else
     param <- newdraw
@@ -90,9 +89,9 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
   coef <- param[,1:n.cov]
   n.mcmc <- nrow(coef)
   cov <- param[,(n.cov+1):ncol(param)]
-  
+
   ## get X matrix ready
-  if (is.null(newdata)) 
+  if (is.null(newdata))
     x <- object$x
   else {
     call <- object$call
@@ -102,7 +101,7 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
                      base = object$base, n.dim = p-1,
                      lev = object$alt, MoP = is.matrix(object$y),
                      verbose = FALSE, extra = FALSE)
-    if (nrow(x) > 1) 
+    if (nrow(x) > 1)
       x <- as.matrix(x[apply(is.na(x), 1, sum)==0,])
     else if (sum(is.na(x))>0)
       stop("Invalid input for `newdata'.")
@@ -116,7 +115,7 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
   }
 
   alt <- object$alt
-  if (object$base != alt[1]) 
+  if (object$base != alt[1])
     alt <- c(object$base, alt[1:(length(alt)-1)])
 
   res <- .C("predict", as.double(x), as.integer(n.obs),

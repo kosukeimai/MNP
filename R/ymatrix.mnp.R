@@ -1,4 +1,4 @@
-ymatrix.mnp <- function(data, base=NULL, extra=FALSE, verbose=verbose) { 
+ymatrix.mnp <- function(data, base=NULL, extra=FALSE) {
   ## checking and formatting Y
   Y <- stats::model.response(data)
   if (is.matrix(Y)) { # Multinomial ordered Probit model
@@ -8,9 +8,9 @@ ymatrix.mnp <- function(data, base=NULL, extra=FALSE, verbose=verbose) {
     lev <- colnames(Y)
     MoP <- TRUE
     if(!is.null(base))
-      stop("Error: The last column of the response matrix must be the base category.\n No need to specify `base.'") 
+      stop("Error: The last column of the response matrix must be the base category.\n No need to specify `base.'")
     base <- lev[p]
-  } else { # standard Multinomial Probit model        
+  } else { # standard Multinomial Probit model
     Y <- as.factor(Y)
     lev <- levels(Y)
     if (!is.null(base))

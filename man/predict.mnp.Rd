@@ -4,7 +4,7 @@
 \alias{predict.mnp}
 \title{Posterior Prediction under the Bayesian Multinomial Probit Models}
 \usage{
-\method{predict}{mnp}(
+predict.mnp(
   object,
   newdata = NULL,
   newdraw = NULL,
@@ -45,15 +45,15 @@ distributions are printed on the screen. The default is \code{FALSE}.}
 \item{...}{additional arguments passed to other methods.}
 }
 \value{
-\code{predict.mnp} yields a list of class 
-\code{predict.mnp} containing at least one of the following elements: 
+\code{predict.mnp} yields a list of class
+\code{predict.mnp} containing at least one of the following elements:
 \item{o}{A three dimensional array of the Monte Carlo sample from the posterior predictive
 distribution of the ordered preferences. The first dimension corresponds to
 the rows of \code{newdata} (or the original data set if \code{newdata} is
 left unspecified), the second dimension corresponds to the alternatives in
 the choice set, and the third dimension indexes the Monte Carlo sample. If
 \code{n.draws} is greater than 1, then each entry will be an average over
-these additional draws.  } 
+these additional draws.  }
 \item{p}{A two or three dimensional array of the
 posterior predictive probabilities for each alternative in the choice set
 being most preferred. The first demension corresponds to the rows of
@@ -61,13 +61,13 @@ being most preferred. The first demension corresponds to the rows of
 unspecified), the second dimension corresponds to the alternatives in the
 choice set, and the third dimension (if it exists) indexes the Monte Carlo
 sample. If \code{n.draws} is greater than 1, then the third diemsion exists
-and indexes the Monte Carlo sample.  } 
+and indexes the Monte Carlo sample.  }
 \item{y}{A matrix of the Monte Carlo
 sample from the posterior predictive distribution of the most preferred
 choice. The first dimension correspond to the rows of \code{newdata} (or the
 original data set if \code{newdata} is left unspecified), and the second
 dimension indexes the Monte Carlo sample. \code{n.draws} will be set to 1
-when computing this quantity of interest.  } 
+when computing this quantity of interest.  }
 \item{x}{A matrix of covariates
 used for prediction }
 }

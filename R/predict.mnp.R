@@ -118,7 +118,7 @@ predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
   if (object$base != alt[1])
     alt <- c(object$base, alt[1:(length(alt)-1)])
 
-  res <- .C("predict", as.double(x), as.integer(n.obs),
+  res <- .C("predictP", as.double(x), as.integer(n.obs),
             as.double(coef), as.double(cov), as.integer(p-1),
             as.integer(n.cov), as.integer(n.mcmc),
             as.integer(n.draws), as.integer(verbose),

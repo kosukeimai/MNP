@@ -17,8 +17,8 @@
 #' of the posterior distribution of the coefficients. } \item{cov.table}{The
 #' summary of the posterior distribution of the covariance matrix.} This object
 #' can be printed by \code{print.summary.mnp}
-#' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@Princeton.Edu}
+#' @author Kosuke Imai, Department of Government and Department of Statistics, Harvard University
+#' \email{imai@Harvard.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
 #' @exportS3Method summary mnp

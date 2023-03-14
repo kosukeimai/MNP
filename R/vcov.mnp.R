@@ -14,7 +14,7 @@
 #' \code{subset} argument, \code{vcov.mnp} returns a three dimensional array
 #' where the third dimension indexes posterior draws. When a scalar is
 #' specified for \code{subset} arugment, \code{vcov.mnp} returns a matrix.
-#' @author Kosuke Imai, Department of Government, Harvard University
+#' @author Kosuke Imai, Department of Government and Department of Statistics, Harvard University
 #' \email{imai@@harvard.edu}
 #' @seealso \code{mnp}, \code{coef.mnp};
 #' @keywords methods

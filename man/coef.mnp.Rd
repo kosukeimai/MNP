@@ -31,7 +31,7 @@ an alias for it. \code{coef} method for class \code{mnp}.
 \code{mnp}, \code{vcov.mnp};
 }
 \author{
-Kosuke Imai, Department of Politics, Princeton University
+Kosuke Imai, Department of Government and Department of Statistics, Harvard University
 \email{kimai@Princeton.Edu}
 }
 \keyword{methods}

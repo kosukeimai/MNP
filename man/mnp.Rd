@@ -228,7 +228,7 @@ report}, Department of Statistics, University of Wisconsin, Madison.
 }
 \author{
 Kosuke Imai, Department of Government and Department of Statistics, Harvard University
-\email{imai@Harvard.Edu}, \url{http://imai.fas.harvard.edu}; David A. van
+\email{imai@Harvard.Edu}, \url{https://imai.fas.harvard.edu}; David A. van
 Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 }
 \keyword{models}

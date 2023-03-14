@@ -2,8 +2,9 @@
 
 S3method(coef,mnp)
 S3method(predict,mnp)
+S3method(print,mnp)
 S3method(print,summary.mnp)
 S3method(summary,mnp)
-export(cov.mnp)
+S3method(vcov,mnp)
 export(mnp)
 useDynLib(MNP, .registration = TRUE)

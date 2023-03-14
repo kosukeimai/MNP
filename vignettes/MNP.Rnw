@@ -5,9 +5,9 @@
 \usepackage{Rd}
 
 %% === margins ===
-\addtolength{\hoffset}{-0.35in} 
+\addtolength{\hoffset}{-0.35in}
 \addtolength{\voffset}{-0.35in}
-\addtolength{\textwidth}{0.75in} 
+\addtolength{\textwidth}{0.75in}
 \addtolength{\textheight}{0.75in}
 %% === basic packages ===
 \usepackage{latexsym}
@@ -26,7 +26,7 @@
 
 
 % == spacing between sections and subsections
-\usepackage[compact]{titlesec} 
+\usepackage[compact]{titlesec}
 
 % === dcolumn package ===
 \usepackage{dcolumn}
@@ -86,7 +86,7 @@
     partially provided by NSF grants DMS-01-04129, DMS-04-38240, and
     DMS-04-06085, and by the Committee on Research in the Humanities
     and Social Sciences at Princeton University.}}
-         
+
 \author{Kosuke Imai\thanks{Professor, Department of Government and Department of
       Statistics, Harvard University.  1737 Cambridge Street,
       Institute for Quantitative Social Science, Cambridge MA 02138.
@@ -128,7 +128,7 @@ often used to analyze the discrete choices made by individuals
 recorded in survey data.
 %Unlike the ordinal probit model, the
 %multinomial probit model does not assume that the choice set is
-%inherently ordered.  
+%inherently ordered.
 Examples where the multinomial probit model may be useful include the
 analysis of product choice by consumers in market research and the
 analysis of candidate or party choice by voters in electoral studies.
@@ -146,7 +146,7 @@ OS X, and Linux/UNIX platforms. Only three commands are necessary to
 use the MNP software; \texttt{mnp()} fits the multinomial probit
 model, \texttt{summary()} summarizes the MCMC output, and
 \texttt{predict()} gives posterior prediction based on the fitted
-model (In addition, \texttt{coef()} and \texttt{cov.mnp()} allow one
+model (In addition, \texttt{coef()} and \texttt{vcov()} allow one
 to extract the posterior draws of model coefficients and covariance
 matrix).  To run an example script, start R and run the following
 commands:
@@ -164,7 +164,7 @@ fit.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The Method} 
+\section{The Method}
 \label{sec:mn_probit}
 
 MNP implements the marginal data augmentation algorithms for posterior
@@ -207,7 +207,7 @@ diagonal element of $\Sigma$ is constrained, $\sigma_{11}=1$.  Please note that 
 response variable, $Y_i$, is the index of the choice of individual $i$
 among the alternatives in the choice set and is modeled in terms of
 this latent variable, $W_i$, via
-\begin{eqnarray} 
+\begin{eqnarray}
   Y_i(W_i) & = & \l\{ \begin{array}{ccl}
     0 & {\rm if} & {\rm max}(W_i)<0 \\
     j & {\rm if} & {\rm max}(W_i)=W_{ij}>0 \end{array}\r. ,
@@ -274,7 +274,7 @@ and use a truncation rule based on Equation~\ref{eq:mop}.
 Our prior distribution for the multinomial probit model is
 \begin{equation}
 \beta \sim \N(0,A\inv) \quad {\rm and} \quad
-p(\Sigma)\propto 
+p(\Sigma)\propto
 |\Sigma|^{-(\nu+p)/2}\l[\tr(S\Sigma\inv)\r]^{-\nu(p-1)/2},
 \label{eq:priors}
 \end{equation}
@@ -328,18 +328,18 @@ distribution conditions on the observed data, $Y=(Y_1,\ldots, Y_n)$ or
 ${\cal Y}= ({\cal Y}_1, \ldots, {\cal Y}_n)$, but averages over the
 uncertainty in the model parameters. For example,
 \begin{eqnarray}
-\Pr(Y^\star = j \mid X^\star, Y) & = & 
-\int \Pr(Y^\star = j \mid X^\star, \beta, \Sigma, Y)\, p(\beta, \Sigma \mid Y) 
+\Pr(Y^\star = j \mid X^\star, Y) & = &
+\int \Pr(Y^\star = j \mid X^\star, \beta, \Sigma, Y)\, p(\beta, \Sigma \mid Y)
 \; d(\beta, \Sigma).
 \end{eqnarray}
 Thus, the posterior predictive distribution accounts for both variability
 in the response variable given the model parameters (i.e., the likelihood
 or sampling distribution) and the uncertainty in the model parameters
 as quantified in the posterior distribution.  Monte Carlo evaluation of
-the posterior predictive distribution is easy once we obtain a Monte 
-Carlo sample of the model parameters from the posterior distribution: We 
+the posterior predictive distribution is easy once we obtain a Monte
+Carlo sample of the model parameters from the posterior distribution: We
 simply sample according to the likelihood for each Monte Carlo sample from
-the posterior distribution. This involves sampling the latent variable 
+the posterior distribution. This involves sampling the latent variable
 under the model in (1) and computing the preferred choice using (2) or
 the ordering of preferences using (3).
 
@@ -379,11 +379,11 @@ using the following three commands,
 \begin{verbatim}
 
 data(detergent)
-res <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, 
-                                      Wisk=WiskPrice, EraPlus=EraPlusPrice, 
+res <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
+                                      Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                       Solo=SoloPrice, All=AllPrice),
            cXnames = c("price"), data = detergent, n.draws = 10000,
-           burnin = 2000, thin = 3, verbose = TRUE)  
+           burnin = 2000, thin = 3, verbose = TRUE)
 summary(res)
 
 \end{verbatim}
@@ -401,7 +401,7 @@ choice-specific variables by using \texttt{cXnames}. The argument
 \texttt{data} allows us to specify the name of the data frame where the
 data are stored.  The model estimates five intercepts and the price
 coefficient as well as 14 parameters in the covariance matrix,
-$\Sigma$. 
+$\Sigma$.
 
 We use the default prior distribution; an improper prior distribution
 for $\beta$ and a diffuse prior distribution for $\Sigma$ with $\nu =
@@ -422,9 +422,9 @@ result of the call of \texttt{summary(res)} are as follows.
 \spacingset{1}
 \begin{verbatim}
 Call:
-mnp(formula = choice ~ 1, data = detergent, choiceX = list(Surf = SurfPrice, 
-    Tide = TidePrice, Wisk = WiskPrice, EraPlus = EraPlusPrice, 
-    Solo = SoloPrice, All = AllPrice), cXnames = c("price"), 
+mnp(formula = choice ~ 1, data = detergent, choiceX = list(Surf = SurfPrice,
+    Tide = TidePrice, Wisk = WiskPrice, EraPlus = EraPlusPrice,
+    Solo = SoloPrice, All = AllPrice), cXnames = c("price"),
     n.draws = 10000, burnin = 2000, thin = 3, verbose = TRUE)
 
 
@@ -464,7 +464,7 @@ Number of stored MCMC draws: 2000
 because convergence has not yet been assessed. Thus, we delay
 interpretation of the fit until Section~\ref{sec:examp-soap-final},
 after we discuss convergence diagnostics in Section~\ref{sec:coda}.
-Note that \texttt{coef(res)} and \texttt{cov.mnp(res)} allow one to
+Note that \texttt{coef(res)} and \texttt{vcov(res)} allow one to
 extract the posterior draws of model coefficients and covariance
 matrix if desired.  Type {\tt help(mnp)} in R for details.
 
@@ -487,27 +487,27 @@ following commands at the R prompt,
 \begin{verbatim}
 
 data(detergent)
-res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, 
-                                       Wisk=WiskPrice, EraPlus=EraPlusPrice, 
+res1 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
+                                       Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                        Solo=SoloPrice, All=AllPrice),
             cXnames = c("price"), data = detergent, n.draws = 50000,
-            verbose = TRUE)  
+            verbose = TRUE)
 
-res2 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, 
-                                       Wisk=WiskPrice, EraPlus=EraPlusPrice, 
+res2 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
+                                       Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                        Solo=SoloPrice, All=AllPrice),
             coef.start = c(1, -1, 1, -1, 1, -1)*10,
             cov.start = matrix(0.5, ncol=5, nrow=5) + diag(0.5, 5),
             cXnames = c("price"), data = detergent, n.draws = 50000,
-            verbose = TRUE)  
+            verbose = TRUE)
 
-res3 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice, 
-                                       Wisk=WiskPrice, EraPlus=EraPlusPrice, 
+res3 <- mnp(choice ~ 1, choiceX = list(Surf=SurfPrice, Tide=TidePrice,
+                                       Wisk=WiskPrice, EraPlus=EraPlusPrice,
                                        Solo=SoloPrice, All=AllPrice),
             coef.start=c(-1, 1, -1, 1, -1, 1)*10,
             cov.start = matrix(0.9, ncol=5, nrow=5) + diag(0.1, 5),
             cXnames = c("price"), data = detergent, n.draws = 50000,
-            verbose = TRUE)  
+            verbose = TRUE)
 \end{verbatim}
 \spacingset{1.5} where we save the output of each chain separately as
  \texttt{res1}, \texttt{res2}, and \texttt{res3}. The first chain is
@@ -529,7 +529,7 @@ following commands,
 \spacingset{1}
 \begin{verbatim}
 library(coda)
-res.coda <- mcmc.list(chain1=mcmc(res1$param[,-7]), 
+res.coda <- mcmc.list(chain1=mcmc(res1$param[,-7]),
                       chain2=mcmc(res2$param[,-7]),
                       chain3=mcmc(res3$param[,-7]))
 \end{verbatim}
@@ -614,7 +614,7 @@ third row.)
     Example. The first row represents three coefficients, the second
     row represents three covariances, and the third row represents
     three variance parameters.}
-  \label{fg:rhat} 
+  \label{fg:rhat}
 \end{figure}
 
 The coda package can also be used to produce univariate time-series
@@ -624,13 +624,13 @@ for the price coefficient.
 
 %pdf("coda.pdf", width=9, height=4.5)
 \spacingset{1}\begin{verbatim}
-res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000, "price"], start=25001), 
+res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000, "price"], start=25001),
                       chain2=mcmc(res2$param[25001:50000, "price"], start=25001),
                       chain3=mcmc(res3$param[25001:50000, "price"], start=25001))
 plot(res.coda, ylab = "price coefficient")
 \end{verbatim}
 %dev.off()
-  \spacingset{1.5} 
+  \spacingset{1.5}
 Figure \ref{fg:trace} presents the resulting plots. The left panel
 overlays the time-series plot for each chain with a different color
 representing each chain. The right panel shows the kernel-smoothed
@@ -652,7 +652,7 @@ details.
     three chains, each in a different color. A lowess smoothed line is
     also plotted for each of the three chains.  The density estimate
     is based on all three chains.}
-  \label{fg:trace} 
+  \label{fg:trace}
 \end{figure}
 
 
@@ -665,7 +665,7 @@ the last 25,000 draws from each chain as an \texttt{mcmc} object and
 combines the \texttt{mcmc} objects into a list,
 % pdf("rhat.pdf")
 %  par(mex=0.5)
-% res.coda <- mcmc.list(chain1=mcmc(res1$param[,c(1:2,6,9,14,18,12,16,19,)]), 
+% res.coda <- mcmc.list(chain1=mcmc(res1$param[,c(1:2,6,9,14,18,12,16,19,)]),
 %                      chain2=mcmc(res2$param[,c(1:2,6,9,14,18,12,16,19,)]),
 %                      chain3=mcmc(res3$param[,c(1:2,6,9,14,18,12,16,19,)]))
 % gelman.plot(res.coda, transform = TRUE, ylim=c(1,1.2))
@@ -673,12 +673,12 @@ combines the \texttt{mcmc} objects into a list,
 
 \spacingset{1}\begin{verbatim}
 
-res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000,-7], start=25001), 
+res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000,-7], start=25001),
                       chain2=mcmc(res2$param[25001:50000,-7], start=25001),
                       chain3=mcmc(res3$param[25001:50000,-7], start=25001))
 summary(res.coda)
 \end{verbatim}
-\spacingset{1.5} 
+\spacingset{1.5}
 
 The second command produces the following summary of the posterior
 distribution for each parameter based on the combined Monte Carlo
@@ -687,9 +687,9 @@ sample.
 \spacingset{1}\begin{verbatim}
 
 Iterations = 25001:50000
-Thinning interval = 1 
-Number of chains = 3 
-Sample size per chain = 25000 
+Thinning interval = 1
+Number of chains = 3
+Sample size per chain = 25000
 
 1. Empirical mean and standard deviation for each variable,
    plus standard error of the mean:
@@ -757,10 +757,10 @@ the posterior predictive probabilities using the covariate values of
 the first two observations by using the \texttt{predict()} command,
 
 \spacingset{1}
-\begin{verbatim} 
-predict(res1, newdata = detergent[1:2,], 
-        newdraw = rbind(res1$param[25001:50000,], 
-                        res2$param[25001:50000,], 
+\begin{verbatim}
+predict(res1, newdata = detergent[1:2,],
+        newdraw = rbind(res1$param[25001:50000,],
+                        res2$param[25001:50000,],
                         res3$param[25001:50000,]), type = "prob")
 \end{verbatim}
 \spacingset{1.5} where \texttt{res1} is the output object from the
@@ -798,7 +798,7 @@ covariates equal to the second household are most likely to buy
 \texttt{Wisk} and \texttt{Tide} are both around 0.35)
 
 
-\section{Example 2: Voters' Preference of Political Parties} 
+\section{Example 2: Voters' Preference of Political Parties}
 \label{sec:examp-japan}
 
 Our second example illustrates how to fit the multinomial probit model
@@ -815,9 +815,9 @@ relative preferences for each of the four parties, i.e., $p=4$. Each
 of 418 voters is asked to give a score between 0 and 100 to each
 party. For example, the first voter in the dataset has the following
 preferences.
-\begin{verbatim} 
-  LDP NFP SKG JCP 
-   80  75  80   0 
+\begin{verbatim}
+  LDP NFP SKG JCP
+   80  75  80   0
 \end{verbatim}
 That is, this voter prefers \texttt{LDP} and \texttt{SKG} to
 \texttt{NFP} and \texttt{JCP}, and between the latter two, she prefers
@@ -834,9 +834,9 @@ values.  Therefore, the following coding of the variables, for our
 purposes, is equivalent to that given above,
 
 \spacingset{1}
-\begin{verbatim} 
-  LDP NFP SKG JCP 
-    3   2   3   1 
+\begin{verbatim}
+  LDP NFP SKG JCP
+    3   2   3   1
 \end{verbatim}
 \spacingset{1.5}
 Finally, it is possible to have non-response for one of the
@@ -845,9 +845,9 @@ certain district.  If \texttt{NFP = NA}, we have no information about
 the relative ranking of \texttt{NFP}.
 
 \spacingset{1}
-\begin{verbatim} 
-  LDP NFP SKG JCP 
-    3  NA   3   1 
+\begin{verbatim}
+  LDP NFP SKG JCP
+    3  NA   3   1
 \end{verbatim}
 \spacingset{1.5}
 In this case, there is no constraint when estimating the preference
@@ -863,7 +863,7 @@ model,
 \spacingset{1}
 \begin{verbatim}
 data(japan)
-res <- mnp(cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, data = japan, 
+res <- mnp(cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, data = japan,
            n.draws = 10000, verbose = TRUE)
 summary(res)
 \end{verbatim}
@@ -881,7 +881,7 @@ output,
 \begin{verbatim}
 
 Call:
-mnp(formula = cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, 
+mnp(formula = cbind(LDP, NFP, SKG, JCP) ~ gender + education + age,
     data = japan, n.draws = 10000, verbose = TRUE)
 
 
@@ -935,24 +935,24 @@ value and two sets of overdispersed starting values,
 \begin{verbatim}
 
 res1 <- mnp(cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, data = japan,
-            n.draws = 50000, verbose = TRUE)  
+            n.draws = 50000, verbose = TRUE)
 
 res2 <- mnp(cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, data = japan,
             coef.start = c(1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1),
             cov.start = matrix(0.5, ncol=3, nrow=3) + diag(0.5, 3),
-            n.draws = 50000, verbose = TRUE)  
+            n.draws = 50000, verbose = TRUE)
 
 res3 <- mnp(cbind(LDP, NFP, SKG, JCP) ~ gender + education + age, data = japan,
             coef.start = c(-1, 1, -1, 1, -1, 1, -1, 1, -1, 1, -1, 1),
             cov.start = matrix(0.9, ncol=3, nrow=3) + diag(0.1, 3),
-            n.draws = 50000, verbose = TRUE)  
+            n.draws = 50000, verbose = TRUE)
 \end{verbatim}
-\spacingset{1.5} 
-%res.coda <- mcmc.list(chain1=mcmc(res1$param[,-13]), 
+\spacingset{1.5}
+%res.coda <- mcmc.list(chain1=mcmc(res1$param[,-13]),
 %                      chain2=mcmc(res2$param[,-13]),
 %                      chain3=mcmc(res3$param[,-13]))
 %gelman.plot(res.coda, transform = TRUE, ylim = c(1,1.2))
-%res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000,-13], start=25001), 
+%res.coda <- mcmc.list(chain1=mcmc(res1$param[25001:50000,-13], start=25001),
 %                      chain2=mcmc(res2$param[25001:50000,-13], start=25001),
 %                      chain3=mcmc(res3$param[25001:50000,-13], start=25001))
 %summary(res.coda)
@@ -973,10 +973,10 @@ Iterations = 25001:50000
 Thinning interval = 1
 Number of chains = 3
 Sample size per chain = 25000
- 
+
 1. Empirical mean and standard deviation for each variable,
    plus standard error of the mean:
- 
+
                     Mean      SD Naive SE Time-series SE
 (Intercept):LDP  0.60167 0.51421 1.88e-03       8.05e-03
 (Intercept):NFP  0.68294 0.56867 2.08e-03       7.95e-03
@@ -995,9 +995,9 @@ LDP:SKG          0.71199 0.06125 2.24e-04       1.59e-03
 NFP:NFP          1.41860 0.13540 4.94e-04       2.45e-03
 NFP:SKG          0.75391 0.08262 3.02e-04       2.12e-03
 SKG:SKG          0.70007 0.08488 3.10e-04       2.16e-03
- 
+
 2. Quantiles for each variable:
- 
+
                      2.5%      25%      50%     75%  97.5%
 (Intercept):LDP -0.405757  0.25198  0.60033  0.9476 1.6172
 (Intercept):NFP -0.428421  0.30016  0.68058  1.0657 1.7981
@@ -1032,9 +1032,9 @@ the following commands,
 
 \spacingset{1}\begin{verbatim}
 japan10a <- japan[10,]
-predict(res1, newdata = japan10a, 
-        newdraw = rbind(res1$param[25001:50000,], 
-                        res2$param[25001:50000,], 
+predict(res1, newdata = japan10a,
+        newdraw = rbind(res1$param[25001:50000,],
+                        res2$param[25001:50000,],
                         res3$param[25001:50000,]), type = "prob")
 \end{verbatim}
 \spacingset{1.5}
@@ -1069,9 +1069,9 @@ commands,
 \begin{verbatim}
 japan10b <- japan10a
 japan10b[,"age"] <- 75
-predict(res1, newdata = japan10b, 
-        newdraw = rbind(res1$param[25001:50000,], 
-                        res2$param[25001:50000,], 
+predict(res1, newdata = japan10b,
+        newdraw = rbind(res1$param[25001:50000,],
+                        res2$param[25001:50000,],
                         res3$param[25001:50000,]), type = "prob")
 \end{verbatim}
 \spacingset{1.5}
@@ -1084,7 +1084,7 @@ results,
          JCP      LDP      NFP      SKG
 [1,] 0.06548 0.485467 0.249667 0.199387
 \end{verbatim}
-\spacingset{1.5} 
+\spacingset{1.5}
 The comparison of the two results shows that changing the value of the
 age variable from 50 to 75 increases the estimated posterior
 predictive probability of preferring \texttt{LDP} most and by more

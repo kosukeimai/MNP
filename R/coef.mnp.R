@@ -1,11 +1,10 @@
 #' Extract Multinomial Probit Model Coefficients
-#' 
+#'
 #' \code{coef.mnp} is a function which extracts multinomial probit model
 #' coefficients from ojbects returned by \code{mnp}. \code{coefficients.mnp} is
 #' an alias for it. \code{coef} method for class \code{mnp}.
-#' 
-#' 
-#' @aliases coef.mnp coefficients.mnp
+#'
+#'
 #' @param object An output object from \code{mnp}.
 #' @param subset A scalar or a numerical vector specifying the row number(s) of
 #' \code{param} in the output object from \code{mnp}. If specified, the
@@ -18,9 +17,8 @@
 #' coefficients.
 #' @author Kosuke Imai, Department of Politics, Princeton University
 #' \email{kimai@Princeton.Edu}
-#' @seealso \code{mnp}, \code{cov.mnp}; 
+#' @seealso \code{mnp}, \code{vcov.mnp};
 #' @keywords methods
-#' @method coef mnp
 #' @exportS3Method coef mnp
 coef.mnp <- function(object, subset = NULL, ...) {
   param <- object$param
@@ -30,7 +28,7 @@ coef.mnp <- function(object, subset = NULL, ...) {
   if (is.null(subset))
     return(param[,1:n.cov])
   else if (subset > n)
-    stop(paste("invalid input for `subset.' only", nrow(param), "draws are stored.")) 
+    stop(paste("invalid input for `subset.' only", nrow(param), "draws are stored."))
   else
-    return(param[subset, 1:n.cov])                 
+    return(param[subset, 1:n.cov])
 }

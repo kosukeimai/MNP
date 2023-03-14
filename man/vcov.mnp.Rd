@@ -30,7 +30,7 @@ covariance matrix from objects returned by \code{mnp}.
 \code{mnp}, \code{coef.mnp};
 }
 \author{
-Kosuke Imai, Department of Government, Harvard University
+Kosuke Imai, Department of Government and Department of Statistics, Harvard University
 \email{imai@harvard.edu}
 }
 \keyword{methods}

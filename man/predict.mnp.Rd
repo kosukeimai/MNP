@@ -4,7 +4,7 @@
 \alias{predict.mnp}
 \title{Posterior Prediction under the Bayesian Multinomial Probit Models}
 \usage{
-predict.mnp(
+\method{predict}{mnp}(
   object,
   newdata = NULL,
   newdraw = NULL,
@@ -68,8 +68,7 @@ choice. The first dimension correspond to the rows of \code{newdata} (or the
 original data set if \code{newdata} is left unspecified), and the second
 dimension indexes the Monte Carlo sample. \code{n.draws} will be set to 1
 when computing this quantity of interest.  }
-\item{x}{A matrix of covariates
-used for prediction }
+\item{x}{A matrix of covariates used for prediction}
 }
 \description{
 Obtains posterior predictions under a fitted (Bayesian) multinomial probit
@@ -96,7 +95,7 @@ monitoring the progress of the code.
 \code{mnp}
 }
 \author{
-Kosuke Imai, Department of Politics, Princeton University
-\email{kimai@Princeton.Edu}
+Kosuke Imai, Department of Government and Department of Statistics, Harvard University
+\email{imai@Harvard.Edu}
 }
 \keyword{methods}

@@ -128,8 +128,8 @@
 #' \item{burnin}{The number of
 #' initial burnin draws.}
 #' \item{thin}{The thinning interval.}
-#' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@@Princeton.Edu}, \url{http://imai.princeton.edu}; David A. van
+#' @author Kosuke Imai, Department of Government and Department of Statistics, Harvard University
+#' \email{imai@@Harvard.Edu}, \url{http://imai.fas.harvard.edu}; David A. van
 #' Dyk, Statistics Section, Department of Mathematics, Imperial College London.
 #' @seealso \code{coef.mnp}, \code{vcov.mnp}, \code{predict.mnp},
 #' \code{summary.mnp};

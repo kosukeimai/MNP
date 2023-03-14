@@ -64,12 +64,12 @@
 #' original data set if \code{newdata} is left unspecified), and the second
 #' dimension indexes the Monte Carlo sample. \code{n.draws} will be set to 1
 #' when computing this quantity of interest.  }
-#' \item{x}{A matrix of covariates
-#' used for prediction }
-#' @author Kosuke Imai, Department of Politics, Princeton University
-#' \email{kimai@Princeton.Edu}
+#' \item{x}{A matrix of covariates used for prediction}
+#' @author Kosuke Imai, Department of Government and Department of Statistics, Harvard University
+#' \email{imai@Harvard.Edu}
 #' @seealso \code{mnp}
 #' @keywords methods
+#' @method predict mnp
 #' @exportS3Method predict mnp
 predict.mnp <- function(object, newdata = NULL, newdraw = NULL, n.draws = 1,
                         type = c("prob", "choice", "order"),

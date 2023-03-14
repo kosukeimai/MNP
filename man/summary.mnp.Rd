@@ -33,7 +33,7 @@ can be printed by \code{print.summary.mnp}
 \code{mnp}
 }
 \author{
-Kosuke Imai, Department of Politics, Princeton University
-\email{kimai@Princeton.Edu}
+Kosuke Imai, Department of Government and Department of Statistics, Harvard University
+\email{imai@Harvard.Edu}
 }
 \keyword{methods}

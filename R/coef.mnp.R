@@ -15,7 +15,7 @@
 #' \code{NULL} is specified for \code{subset} argument) or a vector (when a
 #' scalar is specified for \code{subset} arugment) of multinomila probit model
 #' coefficients.
-#' @author Kosuke Imai, Department of Politics, Princeton University
+#' @author Kosuke Imai, Department of Government and Department of Statistics, Harvard University
 #' \email{kimai@Princeton.Edu}
 #' @seealso \code{mnp}, \code{vcov.mnp};
 #' @keywords methods

@@ -637,7 +637,7 @@ representing each chain. The right panel shows the kernel-smoothed
 density estimate of the posterior distribution. One can also apply an
 array of other functions to \texttt{res.coda}.  See the coda
 homepage,
-\href{http://www-fis.iarc.fr/coda}{http://www-fis.iarc.fr/coda}, for
+\href{https://CRAN.R-project.org/package=coda}{https://CRAN.R-project.org/package=coda}, for
 details.
 
 \begin{figure}

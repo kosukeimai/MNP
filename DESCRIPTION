@@ -1,5 +1,5 @@
 Package: MNP
-Version: 3.1-5
+Version: 3.1-6
 Title: Fitting the Multinomial Probit Model 
 Authors@R: c(
   person("Kosuke", "Imai", , "imai@harvard.edu", c("aut", "cre")),

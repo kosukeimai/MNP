@@ -190,7 +190,7 @@ individuals may have preferences among the available alternatives
 these ordering are individual specific rather than being
 characteristics of the alternatives themselves.  The ordinal probit
 model can be fitted via an MCMC algorithm in R by installing a package
-called MCMCpack \citep{mart:quin:park:09}.
+called MCMCpack \citep{mart:quin:park:13}.
 
 Under the multinomial probit model, we assume a multivariate normal
 distribution on the latent variables,

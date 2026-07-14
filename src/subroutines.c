@@ -41,7 +41,7 @@ void dinv(double **X,
 	  double **X_inv)
 {
   int i,j, k, errorM;
-  double *pdInv = doubleArray(size*size);
+  double *pdInv = doubleArray(size * (size + 1) / 2);
 
   for (i = 0, j = 0; j < size; j++) 
     for (k = 0; k <= j; k++) 
@@ -74,7 +74,7 @@ void dinv(double **X,
 void dcholdc(double **X, int size, double **L)
 {
   int i, j, k, errorM;
-  double *pdTemp = doubleArray(size*size);
+  double *pdTemp = doubleArray(size * (size + 1) / 2);
 
   for (j = 0, i = 0; j < size; j++) 
     for (k = 0; k <= j; k++) 
